@@ -25,8 +25,8 @@ public class VentanaInventario_VerInventario extends javax.swing.JFrame {
     
     public VentanaInventario_VerInventario() {
         initComponents();
-        String columnasDeTabla[] = new String[]{"Artículo", "Descripción", "Cantidad", "Precio"};
-        modeloTablaArticulos.setColumnIdentifiers(columnasDeTabla);
+        String camposTabla[] = new String[]{"Artículo", "Descripción", "Cantidad", "Precio"};
+        modeloTablaArticulos.setColumnIdentifiers(camposTabla);
         tablaDeArticulos.setModel(modeloTablaArticulos);
         try {
             generarTablaDeArticulos();
@@ -57,7 +57,7 @@ public class VentanaInventario_VerInventario extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaDeArticulos = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
+        label_informacion = new javax.swing.JLabel();
         buscarArticuloJButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -76,7 +76,7 @@ public class VentanaInventario_VerInventario extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tablaDeArticulos);
 
-        jLabel1.setText("Artículos");
+        label_informacion.setText("Artículos");
 
         buscarArticuloJButton.setText("Buscar articulo");
         buscarArticuloJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +97,7 @@ public class VentanaInventario_VerInventario extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(label_informacion)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE))
                 .addContainerGap())
@@ -106,7 +106,7 @@ public class VentanaInventario_VerInventario extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(69, 69, 69)
-                .addComponent(jLabel1)
+                .addComponent(label_informacion)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
@@ -124,46 +124,11 @@ public class VentanaInventario_VerInventario extends javax.swing.JFrame {
         ventanaBuscarArticuloInv.setVisible(true);
     }//GEN-LAST:event_buscarArticuloJButtonActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaInventario_VerInventario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaInventario_VerInventario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaInventario_VerInventario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaInventario_VerInventario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VentanaInventario_VerInventario().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buscarArticuloJButton;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel label_informacion;
     private javax.swing.JTable tablaDeArticulos;
     // End of variables declaration//GEN-END:variables
 }
