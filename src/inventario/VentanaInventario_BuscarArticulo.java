@@ -20,7 +20,7 @@ public class VentanaInventario_BuscarArticulo extends javax.swing.JFrame {
     /**
      * Creates new form VentanaInventario_VerArticulo
      */
-    OperacionesBDInventario baseDeDatos= new OperacionesBDInventario();
+    ManejadorBD baseDeDatos= new ManejadorBD();
     public VentanaInventario_BuscarArticulo() {
         
         initComponents();

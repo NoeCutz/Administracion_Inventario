@@ -2,7 +2,7 @@ package inventario;
 
 public class VentanaPrincipal extends javax.swing.JFrame {
 
-    OperacionesBDInventario db = new OperacionesBDInventario();
+    ManejadorBD db = new ManejadorBD();
     
 
     public VentanaPrincipal() {

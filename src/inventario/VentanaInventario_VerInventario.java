@@ -20,7 +20,7 @@ public class VentanaInventario_VerInventario extends javax.swing.JFrame {
     /**
      * Creates new form VentanaInventario_VerArticulos
      */
-    OperacionesBDInventario baseDeDatos= new OperacionesBDInventario();
+    ManejadorBD baseDeDatos= new ManejadorBD();
     DefaultTableModel modeloTablaArticulos= new DefaultTableModel();
     
     public VentanaInventario_VerInventario() {

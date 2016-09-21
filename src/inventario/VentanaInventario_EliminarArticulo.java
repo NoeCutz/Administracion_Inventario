@@ -97,7 +97,7 @@ public class VentanaInventario_EliminarArticulo extends javax.swing.JFrame {
 
     private void borrarArticuloJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarArticuloJButtonActionPerformed
        try{
-       OperacionesBDInventario baseDeDatos = new OperacionesBDInventario();
+       ManejadorBD baseDeDatos = new ManejadorBD();
        baseDeDatos.conectarConMySQL("root", "", "ElCaballoDeHierro");
        baseDeDatos.eliminarArticuloDeInventario("Articulos", claveJTextField.getText());
        baseDeDatos.terminarConexionConMySQL();
