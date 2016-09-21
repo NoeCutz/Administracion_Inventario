@@ -14,17 +14,17 @@ public class VentanaInventario_AgregarArticulo extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        claveJTextField = new javax.swing.JTextField();
-        descripcionJTextField = new javax.swing.JTextField();
-        precioJTextField = new javax.swing.JTextField();
-        cantidadJTextField = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        areaTextoClave = new javax.swing.JTextField();
+        areaTextoDescripcion = new javax.swing.JTextField();
+        areaTextoPrecio = new javax.swing.JTextField();
+        areaTextoCantidad = new javax.swing.JTextField();
+        etiquetaClave = new javax.swing.JLabel();
+        etiquetaDescripcion = new javax.swing.JLabel();
+        etiquetaCantidad = new javax.swing.JLabel();
         agregarJButton = new javax.swing.JButton();
         cancelarJButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        etiquetaPrecio = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
@@ -32,22 +32,22 @@ public class VentanaInventario_AgregarArticulo extends javax.swing.JFrame {
         setTitle("Registro de Artículo");
         setResizable(false);
 
-        claveJTextField.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        areaTextoClave.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
-        descripcionJTextField.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        areaTextoDescripcion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
-        precioJTextField.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        areaTextoPrecio.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
-        cantidadJTextField.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        areaTextoCantidad.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
-        jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel3.setText("Clave");
+        etiquetaClave.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        etiquetaClave.setText("Clave");
 
-        jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel4.setText("Descripcion");
+        etiquetaDescripcion.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        etiquetaDescripcion.setText("Descripcion");
 
-        jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel5.setText("Cantidad");
+        etiquetaCantidad.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        etiquetaCantidad.setText("Cantidad");
 
         agregarJButton.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         agregarJButton.setText("Agregar");
@@ -65,8 +65,8 @@ public class VentanaInventario_AgregarArticulo extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel7.setText("Precio");
+        etiquetaPrecio.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        etiquetaPrecio.setText("Precio");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -79,21 +79,21 @@ public class VentanaInventario_AgregarArticulo extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
+                                    .addComponent(etiquetaDescripcion)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel1)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel7))
-                                    .addComponent(jLabel5))
+                                        .addComponent(etiquetaPrecio))
+                                    .addComponent(etiquetaCantidad))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(descripcionJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
-                                    .addComponent(cantidadJTextField)
-                                    .addComponent(precioJTextField)))
+                                    .addComponent(areaTextoDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+                                    .addComponent(areaTextoCantidad)
+                                    .addComponent(areaTextoPrecio)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
+                                .addComponent(etiquetaClave)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(claveJTextField)))
+                                .addComponent(areaTextoClave)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(agregarJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -106,21 +106,21 @@ public class VentanaInventario_AgregarArticulo extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(claveJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
+                    .addComponent(areaTextoClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(etiquetaClave))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(descripcionJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(areaTextoDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(etiquetaDescripcion))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cantidadJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                    .addComponent(areaTextoCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(etiquetaCantidad))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(precioJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(areaTextoPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel7))
+                    .addComponent(etiquetaPrecio))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(agregarJButton)
@@ -135,10 +135,10 @@ public class VentanaInventario_AgregarArticulo extends javax.swing.JFrame {
        try{
        ManejadorBD baseDeDatos = new ManejadorBD();
         baseDeDatos.conectarConMySQL("root", "", "ElCaballoDeHierro");
-        baseDeDatos.insertarArticuloEnInventario("Articulos", claveJTextField.getText(),
-                descripcionJTextField.getText(),
-                Integer.parseInt(cantidadJTextField.getText()),
-                Integer.parseInt(precioJTextField.getText()));
+        baseDeDatos.insertarArticuloEnInventario("Articulos", areaTextoClave.getText(),
+                areaTextoDescripcion.getText(),
+                Integer.parseInt(areaTextoCantidad.getText()),
+                Integer.parseInt(areaTextoPrecio.getText()));
         baseDeDatos.terminarConexionConMySQL();
         this.dispose();
        }
@@ -155,16 +155,16 @@ public class VentanaInventario_AgregarArticulo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton agregarJButton;
+    private javax.swing.JTextField areaTextoCantidad;
+    private javax.swing.JTextField areaTextoClave;
+    private javax.swing.JTextField areaTextoDescripcion;
+    private javax.swing.JTextField areaTextoPrecio;
     private javax.swing.JButton cancelarJButton;
-    private javax.swing.JTextField cantidadJTextField;
-    private javax.swing.JTextField claveJTextField;
-    private javax.swing.JTextField descripcionJTextField;
+    private javax.swing.JLabel etiquetaCantidad;
+    private javax.swing.JLabel etiquetaClave;
+    private javax.swing.JLabel etiquetaDescripcion;
+    private javax.swing.JLabel etiquetaPrecio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField precioJTextField;
     // End of variables declaration//GEN-END:variables
 }
