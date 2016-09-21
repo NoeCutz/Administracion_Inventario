@@ -135,11 +135,11 @@ public class VentanaInventario_AgregarArticulo extends javax.swing.JFrame {
        try{
        ManejadorBD baseDeDatos = new ManejadorBD();
         baseDeDatos.conectarConMySQL("root", "", "ElCaballoDeHierro");
-        baseDeDatos.insertarArticuloEnInventario("Articulos", claveJTextField.getText(),
+        baseDeDatos.insertarTupla("Articulos", claveJTextField.getText(),
                 descripcionJTextField.getText(),
                 Integer.parseInt(cantidadJTextField.getText()),
                 Integer.parseInt(precioJTextField.getText()));
-        baseDeDatos.terminarConexionConMySQL();
+        baseDeDatos.desconectarConMySQL();
         this.dispose();
        }
        catch(Exception e)

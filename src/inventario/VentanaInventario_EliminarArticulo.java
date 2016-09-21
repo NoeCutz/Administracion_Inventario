@@ -99,8 +99,8 @@ public class VentanaInventario_EliminarArticulo extends javax.swing.JFrame {
        try{
        ManejadorBD baseDeDatos = new ManejadorBD();
        baseDeDatos.conectarConMySQL("root", "", "ElCaballoDeHierro");
-       baseDeDatos.eliminarArticuloDeInventario("Articulos", claveJTextField.getText());
-       baseDeDatos.terminarConexionConMySQL();
+       baseDeDatos.eliminarTupla("Articulos", claveJTextField.getText());
+       baseDeDatos.desconectarConMySQL();
        this.dispose();
        }
        catch(Exception e)

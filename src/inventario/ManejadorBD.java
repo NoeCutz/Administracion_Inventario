@@ -5,8 +5,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class ManejadorBD {
@@ -14,114 +12,64 @@ public class ManejadorBD {
     // BD: Base de Datos
     private static Connection conexionConBD;
 
-    public void conectarConMySQL(String usuario, String contrasena, String nombreBD) {
-        try {
+    public void conectarConMySQL(String usuario, String contrasena, String nombreBD) throws ClassNotFoundException, SQLException {
             Class.forName("com.mysql.jdbc.Driver");
             conexionConBD = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + nombreBD, usuario, contrasena);
-            //System.out.println("Se ha iniciado la conexión con el servidor de forma exitosa");
-        } catch (ClassNotFoundException excepcion) {
-            Logger.getLogger(ManejadorBD.class.getName()).log(Level.SEVERE, null, excepcion);
-        } catch (SQLException excepcion) {
-            Logger.getLogger(ManejadorBD.class.getName()).log(Level.SEVERE, null, excepcion);
-        }
     }
 
-    public void terminarConexionConMySQL() {
-        try {
+    public void desconectarConMySQL() throws SQLException {
             conexionConBD.close();
-            //System.out.println("Se ha finalizado la conexión con el servidor");
-        } catch (SQLException ex) {
-            Logger.getLogger(ManejadorBD.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
 
-    public void crearBD(String nombreDeBD) {
-        // BD: Base de Datos
-        try {
+    public void crearBD(String nombreDeBD, String nombreDeUsuario, String contrasenia) throws SQLException, ClassNotFoundException {
             String comandoSQL = "CREATE DATABASE " + nombreDeBD;
             Statement sentenciaSQL = conexionConBD.createStatement();
             sentenciaSQL.executeUpdate(comandoSQL);
-            conectarConMySQL("root", "", nombreDeBD);
-            JOptionPane.showMessageDialog(null, "Se ha creado la base de datos " + nombreDeBD + " de forma exitosa");
-        } catch (SQLException excepcion) {
-            Logger.getLogger(ManejadorBD.class.getName()).log(Level.SEVERE, null, excepcion);
-        }
+            conectarConMySQL(nombreDeUsuario, contrasenia , nombreDeBD);
     }
 
-    public void crearTabla(String nombreDeTabla) {
-        try {
-            String comandoSQL = "CREATE TABLE " + nombreDeTabla + ""
-                    + "(Clave VARCHAR(25) PRIMARY KEY, Descripcion VARCHAR(100), Cantidad INT , Precio INT)";
+    public void crearTabla(String nombreDeTabla, String camposTabla) throws SQLException {
+            String comandoSQL = "CREATE TABLE " + nombreDeTabla + camposTabla;
             JOptionPane.showMessageDialog(null, "Se ha creado la base de tabla " + nombreDeTabla + " de forma exitosa");
             Statement sentenciaSQL = conexionConBD.createStatement();
             sentenciaSQL.executeUpdate(comandoSQL);
-        } catch (SQLException excepcion) {
-            Logger.getLogger(ManejadorBD.class.getName()).log(Level.SEVERE, null, excepcion);
-        }
+    }
+    
+    public void eliminarTabla(String nombreDeTabla) throws SQLException {
+            String comandoSQL = "DROP TABLE IF EXISTS" + nombreDeTabla;
+            JOptionPane.showMessageDialog(null, "Se ha eliminado la tabla" + nombreDeTabla + " de forma exitosa");
+            Statement sentenciaSQL = conexionConBD.createStatement();
+            sentenciaSQL.executeUpdate(comandoSQL);
     }
 
-    public void insertarArticuloEnInventario(String nombreDeTabla, String claveDeArticulo, String descripcionDeArticulo, int cantidadDeArticulo, int precioDeArticulo) {
-        try {
-            String consultaSQL = "INSERT INTO " + nombreDeTabla + " VALUES("
-                    + "\"" + claveDeArticulo + "\", "
-                    + "\"" + descripcionDeArticulo + "\", "
-                    + "\"" + cantidadDeArticulo + "\", "
-                    + "\"" + precioDeArticulo + "\")";
+    public void insertarTupla(String nombreDeTabla, String valoresTupla) throws SQLException {
+            String consultaSQL = "INSERT INTO " + nombreDeTabla + " VALUES("+valoresTupla;
             Statement sentenciaSQL = conexionConBD.createStatement();
             sentenciaSQL.executeUpdate(consultaSQL);
-            JOptionPane.showMessageDialog(null, "Artículo almacenado exitosamente");
-        } catch (SQLException excepcion) {
-            System.out.println(excepcion.getMessage());
-            JOptionPane.showMessageDialog(null, "Error en el almacenamiento del artículo");
-        }
     }
-
-    public ResultSet obtenerInventario(String nombreDeTabla) {
-        
-        try {
+    
+    public ResultSet obtenerTuplas(String nombreDeTabla) throws SQLException {
             String consultaSQL = "SELECT * FROM " + nombreDeTabla;
             Statement sentenciaSQL = conexionConBD.createStatement();
             ResultSet resultadosConsultaSQL;
             resultadosConsultaSQL = sentenciaSQL.executeQuery(consultaSQL);
             return resultadosConsultaSQL;
-
-
-        } catch (SQLException excepcion) {
-            JOptionPane.showMessageDialog(null, "Error en la obtención del inventario");
-        }
-        
-        return null;
     }
     
-    public ResultSet buscarArticuloEnInventario(String nombreDetabla, String claveDeArticulo)
+    public ResultSet buscarTupla(String nombreDeTabla, String campoLlavePrimaria, String valorLlavePrimaria) throws SQLException
     {
-         try {
-            String consultaSQL = "SELECT * FROM " + nombreDetabla + " WHERE Clave = \"" + claveDeArticulo + "\"";
+            String consultaSQL = "SELECT * FROM " + nombreDeTabla + " WHERE "+campoLlavePrimaria +"= \"" + valorLlavePrimaria + "\"";
             Statement sentenciaSQL = conexionConBD.createStatement();
             ResultSet resultadosConsultaSQL;
             resultadosConsultaSQL= sentenciaSQL.executeQuery(consultaSQL);
             return resultadosConsultaSQL;
-
-        } catch (SQLException excepcion) {
-            System.out.println(excepcion.getMessage());
-            JOptionPane.showMessageDialog(null, "No se encontró el artículo");
-        }
-         
-         return null;
     }
 
-    public void eliminarArticuloDeInventario(String nombreDeTabla, String claveDeArticulo) {
-        try {
-            String consultaSQL = "DELETE FROM " + nombreDeTabla + " WHERE Clave = \"" + claveDeArticulo + "\"";
+    public void eliminarTupla(String nombreDeTabla, String campoLlavePrimaria, String valorLlavePrimaria) throws SQLException {
+             String consultaSQL = "SELECT * FROM " + nombreDeTabla + " WHERE "+campoLlavePrimaria +"= \"" + valorLlavePrimaria + "\"";
             Statement sentenciaSQL = conexionConBD.createStatement();
             sentenciaSQL.executeUpdate(consultaSQL);
             JOptionPane.showMessageDialog(null, "Artículo borrado exitosamente");
-
-        } catch (SQLException excepcion) {
-            System.out.println(excepcion.getMessage());
-            JOptionPane.showMessageDialog(null, "Error borrando el articulo especificado");
-        }
     }
-    
-
+  
 }

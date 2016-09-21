@@ -175,7 +175,7 @@ public class VentanaInventario_BuscarArticulo extends javax.swing.JFrame {
             
             baseDeDatos.conectarConMySQL("root", "", "ElCaballoDeHierro");
             String claveDeArticulo= claveJTextField.getText();
-            ResultSet resultadosConsultaSQL= baseDeDatos.buscarArticuloEnInventario("Articulos", claveDeArticulo);
+            ResultSet resultadosConsultaSQL= baseDeDatos.buscarTupla("Articulos", claveDeArticulo);
             resultadosConsultaSQL.next(); // Permite acceder al String del resultado de consulta el cual por default 
             // es una direccion de memoria
             descripcionJTextField.setVisible(true);
@@ -188,7 +188,7 @@ public class VentanaInventario_BuscarArticulo extends javax.swing.JFrame {
             descripcionJTextField.setText(resultadosConsultaSQL.getString("Descripcion"));
             cantidadJTextField.setText(resultadosConsultaSQL.getString("Cantidad"));
             precioJTextField.setText(resultadosConsultaSQL.getString("Precio"));
-            baseDeDatos.terminarConexionConMySQL();
+            baseDeDatos.desconectarConMySQL();
             
             
         }
