@@ -25,8 +25,8 @@ public class VentanaInventario_VerInventario extends javax.swing.JFrame {
     
     public VentanaInventario_VerInventario() {
         initComponents();
-        String columnasDeTabla[] = new String[]{"Artículo", "Descripción", "Cantidad", "Precio"};
-        modeloTablaArticulos.setColumnIdentifiers(columnasDeTabla);
+        String camposTabla[] = new String[]{"Artículo", "Descripción", "Cantidad", "Precio"};
+        modeloTablaArticulos.setColumnIdentifiers(camposTabla);
         tablaDeArticulos.setModel(modeloTablaArticulos);
         try {
             generarTablaDeArticulos();
@@ -57,7 +57,7 @@ public class VentanaInventario_VerInventario extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaDeArticulos = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
+        label_informacion = new javax.swing.JLabel();
         buscarArticuloJButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -76,7 +76,7 @@ public class VentanaInventario_VerInventario extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tablaDeArticulos);
 
-        jLabel1.setText("Artículos");
+        label_informacion.setText("Artículos");
 
         buscarArticuloJButton.setText("Buscar articulo");
         buscarArticuloJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +97,7 @@ public class VentanaInventario_VerInventario extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(label_informacion)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE))
                 .addContainerGap())
@@ -106,7 +106,7 @@ public class VentanaInventario_VerInventario extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(69, 69, 69)
-                .addComponent(jLabel1)
+                .addComponent(label_informacion)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
@@ -162,8 +162,8 @@ public class VentanaInventario_VerInventario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buscarArticuloJButton;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel label_informacion;
     private javax.swing.JTable tablaDeArticulos;
     // End of variables declaration//GEN-END:variables
 }
