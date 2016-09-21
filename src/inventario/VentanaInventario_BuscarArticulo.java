@@ -207,10 +207,7 @@ public class VentanaInventario_BuscarArticulo extends javax.swing.JFrame {
         precioJTextField.setText(null);
     }//GEN-LAST:event_vaciarCamposJButtonActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buscarArticuloJButton;

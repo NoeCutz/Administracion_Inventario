@@ -113,7 +113,7 @@ public class VentanaInventario_EliminarArticulo extends javax.swing.JFrame {
      this.dispose();
     }//GEN-LAST:event_cancelarJButtonActionPerformed
 
-   
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton borrarArticuloJButton;

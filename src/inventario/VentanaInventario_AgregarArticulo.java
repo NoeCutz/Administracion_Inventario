@@ -152,10 +152,6 @@ public class VentanaInventario_AgregarArticulo extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_cancelarJButtonActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
- 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton agregarJButton;
