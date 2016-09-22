@@ -18,9 +18,11 @@ import javax.swing.table.DefaultTableModel;
  */
 public class VentanaInventario_VerInventario extends javax.swing.JFrame {
 
-    /**
-     * Creates new form VentanaInventario_VerArticulos
-     */
+    
+    private javax.swing.JButton botonBuscarArticulo;
+    private javax.swing.JLabel etiquetaInformacion;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tablaDeArticulos;
     private ManejadorBD baseDeDatos= new ManejadorBD();
     private DefaultTableModel modeloTablaArticulos= new DefaultTableModel();
     
@@ -128,10 +130,6 @@ public class VentanaInventario_VerInventario extends javax.swing.JFrame {
     }//GEN-LAST:event_botonBuscarArticuloActionPerformed
 
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonBuscarArticulo;
-    private javax.swing.JLabel etiquetaInformacion;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tablaDeArticulos;
-    // End of variables declaration//GEN-END:variables
+   
+   
 }

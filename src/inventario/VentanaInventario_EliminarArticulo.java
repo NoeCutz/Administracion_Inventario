@@ -15,6 +15,11 @@ import javax.swing.JOptionPane;
  */
 public class VentanaInventario_EliminarArticulo extends javax.swing.JFrame {
 
+    private javax.swing.JButton botonBorrarArticulo;
+    private javax.swing.JButton botonCancelar;
+    private javax.swing.JTextField campoTextoClave;
+    private javax.swing.JLabel etiquetaClave;
+    private ManejadorBD baseDeDatos = new ManejadorBD();
     /**
      * Creates new form Window_Delete
      */
@@ -98,7 +103,7 @@ public class VentanaInventario_EliminarArticulo extends javax.swing.JFrame {
 
     private void botonBorrarArticuloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBorrarArticuloActionPerformed
        try{
-       ManejadorBD baseDeDatos = new ManejadorBD();
+       
        baseDeDatos.conectarConMySQL("root", "", "ElCaballoDeHierro");
        String claveDeArticulo= campoTextoClave.getText();
        baseDeDatos.eliminarTupla("Articulos", "Clave", claveDeArticulo);
@@ -118,10 +123,7 @@ public class VentanaInventario_EliminarArticulo extends javax.swing.JFrame {
 
 
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonBorrarArticulo;
-    private javax.swing.JButton botonCancelar;
-    private javax.swing.JTextField campoTextoClave;
-    private javax.swing.JLabel etiquetaClave;
-    // End of variables declaration//GEN-END:variables
+    
+
+    
 }

@@ -15,10 +15,22 @@ import javax.swing.JOptionPane;
  */
 public class VentanaInventario_BuscarArticulo extends javax.swing.JFrame {
 
+    
+    private javax.swing.JButton botonBuscarArticulo;
+    private javax.swing.JButton botonVaciarCampos;
+    private javax.swing.JTextField campoTextoCantidad;
+    private javax.swing.JTextField campoTextoClave;
+    private javax.swing.JTextField campoTextoDescripcion;
+    private javax.swing.JTextField campoTextoPrecio;
+    private javax.swing.JLabel etiquetaCantidad;
+    private javax.swing.JLabel etiquetaDescripcion;
+    private javax.swing.JLabel etiquetaIngresarClave;
+    private javax.swing.JLabel etiquetaPrecio;
+    private ManejadorBD baseDeDatos= new ManejadorBD();
+
     /**
      * Creates new form VentanaInventario_VerArticulo
      */
-    private ManejadorBD baseDeDatos= new ManejadorBD();
     public VentanaInventario_BuscarArticulo() {
         
         initComponents();
@@ -207,16 +219,7 @@ public class VentanaInventario_BuscarArticulo extends javax.swing.JFrame {
 
 
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonBuscarArticulo;
-    private javax.swing.JButton botonVaciarCampos;
-    private javax.swing.JTextField campoTextoCantidad;
-    private javax.swing.JTextField campoTextoClave;
-    private javax.swing.JTextField campoTextoDescripcion;
-    private javax.swing.JTextField campoTextoPrecio;
-    private javax.swing.JLabel etiquetaCantidad;
-    private javax.swing.JLabel etiquetaDescripcion;
-    private javax.swing.JLabel etiquetaIngresarClave;
-    private javax.swing.JLabel etiquetaPrecio;
-    // End of variables declaration//GEN-END:variables
+  
+
+    
 }

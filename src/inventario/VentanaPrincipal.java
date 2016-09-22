@@ -2,9 +2,15 @@ package inventario;
 
 public class VentanaPrincipal extends javax.swing.JFrame {
 
+    private javax.swing.JMenuBar menuInventario;
+    private javax.swing.JMenuItem menuItemAgregarInventario;
+    private javax.swing.JMenuItem menuItemVerInventario;
+    private javax.swing.JMenuItem menuItemeEliminarInventario;
+    private javax.swing.JMenu subMenuInventario;
     private VentanaInventario_AgregarArticulo ventanaAgregarArticuloInv;
     private VentanaInventario_VerInventario ventanaVerInv;
     private VentanaInventario_EliminarArticulo ventanaEliminarArticuloInv;
+
     
     public VentanaPrincipal() {
         initComponents();
@@ -93,12 +99,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
  
  
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuBar menuInventario;
-    private javax.swing.JMenuItem menuItemAgregarInventario;
-    private javax.swing.JMenuItem menuItemVerInventario;
-    private javax.swing.JMenuItem menuItemeEliminarInventario;
-    private javax.swing.JMenu subMenuInventario;
-    // End of variables declaration//GEN-END:variables
+    
+    
     
 }
