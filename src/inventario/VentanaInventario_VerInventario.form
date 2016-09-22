@@ -26,14 +26,14 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="219" max="-2" attributes="0"/>
-              <Component id="buscarArticuloJButton" min="-2" max="-2" attributes="0"/>
+              <Component id="botonBuscarArticulo" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="label_informacion" min="-2" max="-2" attributes="0"/>
+                      <Component id="etiquetaInformacion" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Component id="jScrollPane1" pref="548" max="32767" attributes="0"/>
@@ -46,11 +46,11 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-              <Component id="label_informacion" min="-2" max="-2" attributes="0"/>
+              <Component id="etiquetaInformacion" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="156" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-              <Component id="buscarArticuloJButton" min="-2" max="-2" attributes="0"/>
+              <Component id="botonBuscarArticulo" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="112" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -78,17 +78,17 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="label_informacion">
+    <Component class="javax.swing.JLabel" name="etiquetaInformacion">
       <Properties>
         <Property name="text" type="java.lang.String" value="Art&#xed;culos"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="buscarArticuloJButton">
+    <Component class="javax.swing.JButton" name="botonBuscarArticulo">
       <Properties>
         <Property name="text" type="java.lang.String" value="Buscar articulo"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscarArticuloJButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonBuscarArticuloActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

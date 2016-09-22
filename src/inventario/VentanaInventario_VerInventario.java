@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -20,8 +21,8 @@ public class VentanaInventario_VerInventario extends javax.swing.JFrame {
     /**
      * Creates new form VentanaInventario_VerArticulos
      */
-    ManejadorBD baseDeDatos= new ManejadorBD();
-    DefaultTableModel modeloTablaArticulos= new DefaultTableModel();
+    private ManejadorBD baseDeDatos= new ManejadorBD();
+    private DefaultTableModel modeloTablaArticulos= new DefaultTableModel();
     
     public VentanaInventario_VerInventario() {
         initComponents();
@@ -30,13 +31,15 @@ public class VentanaInventario_VerInventario extends javax.swing.JFrame {
         tablaDeArticulos.setModel(modeloTablaArticulos);
         try {
             generarTablaDeArticulos();
-        } catch (SQLException ex) {
-            Logger.getLogger(VentanaInventario_VerInventario.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException excepcionBibliotecaNoHallada) {
+             JOptionPane.showMessageDialog(null, excepcionBibliotecaNoHallada.getMessage()+"\n"+"Biblioteca no encontrada");  
+        } catch (SQLException excepcionElementoNoHallado) {
+            JOptionPane.showMessageDialog(null, excepcionElementoNoHallado.getMessage()+"\n"+"Elemento no encontrado");
         }
         
     }
     
-    private void generarTablaDeArticulos() throws SQLException
+    private void generarTablaDeArticulos() throws SQLException, ClassNotFoundException
     {
         baseDeDatos.conectarConMySQL("root", "", "ElCaballoDeHierro");
         ResultSet resultadosConsultaSQL= baseDeDatos.obtenerTuplas("Articulos");
@@ -57,8 +60,8 @@ public class VentanaInventario_VerInventario extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaDeArticulos = new javax.swing.JTable();
-        label_informacion = new javax.swing.JLabel();
-        buscarArticuloJButton = new javax.swing.JButton();
+        etiquetaInformacion = new javax.swing.JLabel();
+        botonBuscarArticulo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Inventario");
@@ -76,12 +79,12 @@ public class VentanaInventario_VerInventario extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tablaDeArticulos);
 
-        label_informacion.setText("Artículos");
+        etiquetaInformacion.setText("Artículos");
 
-        buscarArticuloJButton.setText("Buscar articulo");
-        buscarArticuloJButton.addActionListener(new java.awt.event.ActionListener() {
+        botonBuscarArticulo.setText("Buscar articulo");
+        botonBuscarArticulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscarArticuloJButtonActionPerformed(evt);
+                botonBuscarArticuloActionPerformed(evt);
             }
         });
 
@@ -91,13 +94,13 @@ public class VentanaInventario_VerInventario extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(219, 219, 219)
-                .addComponent(buscarArticuloJButton)
+                .addComponent(botonBuscarArticulo)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(label_informacion)
+                        .addComponent(etiquetaInformacion)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE))
                 .addContainerGap())
@@ -106,29 +109,29 @@ public class VentanaInventario_VerInventario extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(69, 69, 69)
-                .addComponent(label_informacion)
+                .addComponent(etiquetaInformacion)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(buscarArticuloJButton)
+                .addComponent(botonBuscarArticulo)
                 .addContainerGap(112, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buscarArticuloJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarArticuloJButtonActionPerformed
+    private void botonBuscarArticuloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarArticuloActionPerformed
         // TODO add your handling code here:
         // Inv: inventario
         VentanaInventario_BuscarArticulo ventanaBuscarArticuloInv= new VentanaInventario_BuscarArticulo();
         ventanaBuscarArticuloInv.setVisible(true);
-    }//GEN-LAST:event_buscarArticuloJButtonActionPerformed
+    }//GEN-LAST:event_botonBuscarArticuloActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buscarArticuloJButton;
+    private javax.swing.JButton botonBuscarArticulo;
+    private javax.swing.JLabel etiquetaInformacion;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel label_informacion;
     private javax.swing.JTable tablaDeArticulos;
     // End of variables declaration//GEN-END:variables
 }
