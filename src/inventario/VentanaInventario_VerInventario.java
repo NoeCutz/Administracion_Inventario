@@ -26,7 +26,7 @@ public class VentanaInventario_VerInventario extends javax.swing.JFrame {
     
     public VentanaInventario_VerInventario() {
         initComponents();
-        String camposTabla[] = new String[]{"Artículo", "Descripción", "Cantidad", "Precio"};
+        String camposTabla[] = new String[]{"Clave", "Descripción", "Cantidad", "Precio"};
         modeloTablaArticulos.setColumnIdentifiers(camposTabla);
         tablaDeArticulos.setModel(modeloTablaArticulos);
         try {

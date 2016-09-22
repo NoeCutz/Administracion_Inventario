@@ -6,6 +6,7 @@
 
 package inventario;
 
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
@@ -99,14 +100,16 @@ public class VentanaInventario_EliminarArticulo extends javax.swing.JFrame {
        try{
        ManejadorBD baseDeDatos = new ManejadorBD();
        baseDeDatos.conectarConMySQL("root", "", "ElCaballoDeHierro");
-       baseDeDatos.eliminarTupla("Articulos", "Clave", campoTextoClave.getText());
+       String claveDeArticulo= campoTextoClave.getText();
+       baseDeDatos.eliminarTupla("Articulos", "Clave", claveDeArticulo);
        baseDeDatos.desconectarConMySQL();
        this.dispose();
-       }
-       catch(Exception e)
-       {
+       } catch (ClassNotFoundException ex) {
+           JOptionPane.showMessageDialog(null, "Elemento no encontrado");
+       } catch (SQLException ex) {
            JOptionPane.showMessageDialog(null, "Artículo no encontrado");
        }
+       
     }//GEN-LAST:event_botonBorrarArticuloActionPerformed
 
     private void botonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCancelarActionPerformed

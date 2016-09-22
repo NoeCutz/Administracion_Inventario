@@ -1,8 +1,6 @@
 package inventario;
 
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class VentanaInventario_AgregarArticulo extends javax.swing.JFrame {
@@ -144,9 +142,6 @@ public class VentanaInventario_AgregarArticulo extends javax.swing.JFrame {
         } catch (SQLException excepcionElementoNoHallado) {
             JOptionPane.showMessageDialog(null, excepcionElementoNoHallado.getMessage()+"\n"+"Elemento no encontrado");
         }
-        
-        
-       
         this.dispose();
        
     }//GEN-LAST:event_botonAgregarActionPerformed
