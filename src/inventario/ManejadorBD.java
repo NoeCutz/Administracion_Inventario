@@ -48,6 +48,13 @@ public class ManejadorBD {
             sentenciaSQL.executeUpdate(consultaSQL);
     }
     
+    public void eliminarTupla(String nombreDeTabla, String campoLlavePrimaria, String valorLlavePrimaria) throws SQLException {
+             String consultaSQL = "DELETE IF EXISTS FROM " + nombreDeTabla + " WHERE "+campoLlavePrimaria +"= \"" + valorLlavePrimaria + "\"";
+            Statement sentenciaSQL = conexionConBD.createStatement();
+            sentenciaSQL.executeUpdate(consultaSQL);
+            JOptionPane.showMessageDialog(null, "Artículo borrado exitosamente");
+    }
+    
     public ResultSet obtenerTuplas(String nombreDeTabla) throws SQLException {
             String consultaSQL = "SELECT * FROM " + nombreDeTabla;
             Statement sentenciaSQL = conexionConBD.createStatement();
@@ -65,11 +72,6 @@ public class ManejadorBD {
             return resultadosConsultaSQL;
     }
 
-    public void eliminarTupla(String nombreDeTabla, String campoLlavePrimaria, String valorLlavePrimaria) throws SQLException {
-             String consultaSQL = "DELETE IF EXISTS FROM " + nombreDeTabla + " WHERE "+campoLlavePrimaria +"= \"" + valorLlavePrimaria + "\"";
-            Statement sentenciaSQL = conexionConBD.createStatement();
-            sentenciaSQL.executeUpdate(consultaSQL);
-            JOptionPane.showMessageDialog(null, "Artículo borrado exitosamente");
-    }
+    
   
 }
