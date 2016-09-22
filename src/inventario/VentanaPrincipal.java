@@ -2,8 +2,15 @@ package inventario;
 
 public class VentanaPrincipal extends javax.swing.JFrame {
 
+    private VentanaInventario_AgregarArticulo ventanaAgregarArticuloInv;
+    private VentanaInventario_VerInventario ventanaVerInv;
+    private VentanaInventario_EliminarArticulo ventanaEliminarArticuloInv;
+    
     public VentanaPrincipal() {
         initComponents();
+        ventanaEliminarArticuloInv = new VentanaInventario_EliminarArticulo();
+        ventanaAgregarArticuloInv = new VentanaInventario_AgregarArticulo();
+        ventanaVerInv= new VentanaInventario_VerInventario();
     }
 
     @SuppressWarnings("unchecked")
@@ -65,21 +72,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void menuItemAgregarInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemAgregarInventarioActionPerformed
         // TODO add your handling code here:
         // Inv= inventario
-        VentanaInventario_AgregarArticulo ventanaAgregarArticuloInv = new VentanaInventario_AgregarArticulo();
+       
         ventanaAgregarArticuloInv.setVisible(true);
     }//GEN-LAST:event_menuItemAgregarInventarioActionPerformed
 
     private void menuItemVerInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemVerInventarioActionPerformed
         // TODO add your handling code here:
         // Inv= inventario
-        VentanaInventario_VerInventario ventanaVerInv= new VentanaInventario_VerInventario();
+         
         ventanaVerInv.setVisible(true);
     }//GEN-LAST:event_menuItemVerInventarioActionPerformed
 
     private void menuItemeEliminarInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemeEliminarInventarioActionPerformed
         // TODO add your handling code here:
         // Inv= inventario
-        VentanaInventario_EliminarArticulo ventanaEliminarArticuloInv = new VentanaInventario_EliminarArticulo();
+        
         ventanaEliminarArticuloInv.setVisible(true);
     }//GEN-LAST:event_menuItemeEliminarInventarioActionPerformed
 
@@ -93,4 +100,5 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuItemeEliminarInventario;
     private javax.swing.JMenu subMenuInventario;
     // End of variables declaration//GEN-END:variables
+    
 }

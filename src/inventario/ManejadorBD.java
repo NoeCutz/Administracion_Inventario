@@ -12,9 +12,9 @@ public class ManejadorBD {
     // BD: Base de Datos
     private static Connection conexionConBD;
 
-    public void conectarConMySQL(String usuario, String contrasena, String nombreBD) throws ClassNotFoundException, SQLException {
+    public void conectarConMySQL(String nombreBD, String usuario, String contrasenia) throws ClassNotFoundException, SQLException {
             Class.forName("com.mysql.jdbc.Driver");
-            conexionConBD = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + nombreBD, usuario, contrasena);
+            conexionConBD = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + nombreBD, usuario, contrasenia);
     }
 
     public void desconectarConMySQL() throws SQLException {
@@ -25,7 +25,7 @@ public class ManejadorBD {
             String comandoSQL = "CREATE DATABASE " + nombreDeBD;
             Statement sentenciaSQL = conexionConBD.createStatement();
             sentenciaSQL.executeUpdate(comandoSQL);
-            conectarConMySQL(nombreDeUsuario, contrasenia , nombreDeBD);
+            conectarConMySQL(nombreDeBD, nombreDeUsuario , contrasenia);
     }
 
     public void crearTabla(String nombreDeTabla, String camposTabla) throws SQLException {

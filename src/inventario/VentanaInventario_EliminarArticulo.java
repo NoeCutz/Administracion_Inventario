@@ -105,9 +105,9 @@ public class VentanaInventario_EliminarArticulo extends javax.swing.JFrame {
        baseDeDatos.desconectarConMySQL();
        this.dispose();
        } catch (ClassNotFoundException ex) {
+           JOptionPane.showMessageDialog(null, "Biblioteca no encontrada");
+       } catch (SQLException excepcionElementoNoEncontrado) {
            JOptionPane.showMessageDialog(null, "Elemento no encontrado");
-       } catch (SQLException ex) {
-           JOptionPane.showMessageDialog(null, "Artículo no encontrado");
        }
        
     }//GEN-LAST:event_botonBorrarArticuloActionPerformed

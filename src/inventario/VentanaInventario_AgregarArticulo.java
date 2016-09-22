@@ -137,10 +137,11 @@ public class VentanaInventario_AgregarArticulo extends javax.swing.JFrame {
                        + "\"" + campoTextoPrecio.getText() + "\"";
             baseDeDatos.insertarTupla("Articulos",valores);
             baseDeDatos.desconectarConMySQL();
+            
         } catch (ClassNotFoundException excepcionBibliotecaNoHallada) {
              JOptionPane.showMessageDialog(null, excepcionBibliotecaNoHallada.getMessage()+"\n"+"Biblioteca no encontrada");  
-        } catch (SQLException excepcionElementoNoHallado) {
-            JOptionPane.showMessageDialog(null, excepcionElementoNoHallado.getMessage()+"\n"+"Elemento no encontrado");
+        } catch (SQLException excepcionElementoNoAgregado) {
+            JOptionPane.showMessageDialog(null, excepcionElementoNoAgregado.getMessage()+"\n"+"Elemento no agregado");
         }
         this.dispose();
        
