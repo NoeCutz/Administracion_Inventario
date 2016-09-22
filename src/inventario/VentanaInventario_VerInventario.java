@@ -39,11 +39,11 @@ public class VentanaInventario_VerInventario extends javax.swing.JFrame {
     private void generarTablaDeArticulos() throws SQLException
     {
         baseDeDatos.conectarConMySQL("root", "", "ElCaballoDeHierro");
-        ResultSet resultadosConsultaSQL= baseDeDatos.obtenerInventario("Articulos");
+        ResultSet resultadosConsultaSQL= baseDeDatos.obtenerTuplas("Articulos");
          while(resultadosConsultaSQL.next()){
             modeloTablaArticulos.addRow(new Object[]{resultadosConsultaSQL.getString("Clave"), resultadosConsultaSQL.getString("Descripcion"), resultadosConsultaSQL.getString("Cantidad"), resultadosConsultaSQL.getString("Precio")});
          } 
-        baseDeDatos.terminarConexionConMySQL();
+        baseDeDatos.desconectarConMySQL();
     }
 
     /**
