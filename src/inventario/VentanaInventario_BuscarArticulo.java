@@ -24,13 +24,13 @@ public class VentanaInventario_BuscarArticulo extends javax.swing.JFrame {
     public VentanaInventario_BuscarArticulo() {
         
         initComponents();
-        descripcionJTextField.setVisible(false);
-        descripcionJLabel.setVisible(false);
-        cantidadJTextField.setVisible(false);
-        cantidadJLabel.setVisible(false);
-        precioJTextField.setVisible(false);
-        precioJLabel.setVisible(false);
-        vaciarCamposJButton.setVisible(false);
+        campoTextoDescripcion.setVisible(false);
+        etiquetaDescripcion.setVisible(false);
+        campoTextoCantidad.setVisible(false);
+        etiquetaCantidad.setVisible(false);
+        campoTextoPrecio.setVisible(false);
+        etiquetaPrecio.setVisible(false);
+        botonVaciarCampos.setVisible(false);
      
     }
 
@@ -43,52 +43,55 @@ public class VentanaInventario_BuscarArticulo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        ingresarClaveJLabel = new javax.swing.JLabel();
-        descripcionJLabel = new javax.swing.JLabel();
-        cantidadJLabel = new javax.swing.JLabel();
-        precioJLabel = new javax.swing.JLabel();
-        claveJTextField = new javax.swing.JTextField();
-        descripcionJTextField = new javax.swing.JTextField();
-        cantidadJTextField = new javax.swing.JTextField();
-        precioJTextField = new javax.swing.JTextField();
-        buscarArticuloJButton = new javax.swing.JButton();
-        vaciarCamposJButton = new javax.swing.JButton();
+        etiquetaIngresarClave = new javax.swing.JLabel();
+        etiquetaDescripcion = new javax.swing.JLabel();
+        etiquetaCantidad = new javax.swing.JLabel();
+        etiquetaPrecio = new javax.swing.JLabel();
+        campoTextoClave = new javax.swing.JTextField();
+        campoTextoDescripcion = new javax.swing.JTextField();
+        campoTextoCantidad = new javax.swing.JTextField();
+        campoTextoPrecio = new javax.swing.JTextField();
+        botonBuscarArticulo = new javax.swing.JButton();
+        botonVaciarCampos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Buscar artículo");
 
-        ingresarClaveJLabel.setText("Ingrese la clave del artículo");
+        etiquetaIngresarClave.setText("Ingrese la clave del artículo");
 
-        descripcionJLabel.setText("Descripción");
+        etiquetaDescripcion.setText("Descripción");
 
-        cantidadJLabel.setText("Cantidad");
+        etiquetaCantidad.setText("Cantidad");
 
-        precioJLabel.setText("Precio");
+        etiquetaPrecio.setText("Precio");
 
-        descripcionJTextField.addActionListener(new java.awt.event.ActionListener() {
+        campoTextoDescripcion.setEditable(false);
+        campoTextoDescripcion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                descripcionJTextFieldActionPerformed(evt);
+                campoTextoDescripcionActionPerformed(evt);
             }
         });
 
-        cantidadJTextField.addActionListener(new java.awt.event.ActionListener() {
+        campoTextoCantidad.setEditable(false);
+        campoTextoCantidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cantidadJTextFieldActionPerformed(evt);
+                campoTextoCantidadActionPerformed(evt);
             }
         });
 
-        buscarArticuloJButton.setText("Buscar");
-        buscarArticuloJButton.addActionListener(new java.awt.event.ActionListener() {
+        campoTextoPrecio.setEditable(false);
+
+        botonBuscarArticulo.setText("Buscar");
+        botonBuscarArticulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscarArticuloJButtonActionPerformed(evt);
+                botonBuscarArticuloActionPerformed(evt);
             }
         });
 
-        vaciarCamposJButton.setText("Vaciar Campos");
-        vaciarCamposJButton.addActionListener(new java.awt.event.ActionListener() {
+        botonVaciarCampos.setText("Vaciar Campos");
+        botonVaciarCampos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                vaciarCamposJButtonActionPerformed(evt);
+                botonVaciarCamposActionPerformed(evt);
             }
         });
 
@@ -99,127 +102,123 @@ public class VentanaInventario_BuscarArticulo extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(jLabel1))
+                        .addContainerGap()
+                        .addComponent(etiquetaIngresarClave))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(ingresarClaveJLabel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(claveJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(campoTextoClave, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(59, 59, 59)
-                        .addComponent(buscarArticuloJButton)
+                        .addComponent(botonBuscarArticulo)
                         .addGap(27, 27, 27)
-                        .addComponent(vaciarCamposJButton))
+                        .addComponent(botonVaciarCampos))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
-                                .addComponent(precioJLabel))
+                                .addComponent(etiquetaPrecio))
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(descripcionJLabel)
-                                    .addComponent(cantidadJLabel))))
+                                    .addComponent(etiquetaDescripcion)
+                                    .addComponent(etiquetaCantidad))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(descripcionJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoTextoDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(cantidadJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(precioJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(campoTextoCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(campoTextoPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addComponent(ingresarClaveJLabel)
+                .addComponent(etiquetaIngresarClave)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(claveJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(campoTextoClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(descripcionJLabel)
-                    .addComponent(descripcionJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(etiquetaDescripcion)
+                    .addComponent(campoTextoDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cantidadJLabel)
-                    .addComponent(cantidadJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(etiquetaCantidad)
+                    .addComponent(campoTextoCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(precioJLabel)
-                    .addComponent(precioJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(etiquetaPrecio)
+                    .addComponent(campoTextoPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buscarArticuloJButton)
-                    .addComponent(vaciarCamposJButton))
+                    .addComponent(botonBuscarArticulo)
+                    .addComponent(botonVaciarCampos))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void descripcionJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descripcionJTextFieldActionPerformed
+    private void campoTextoDescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoTextoDescripcionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_descripcionJTextFieldActionPerformed
+    }//GEN-LAST:event_campoTextoDescripcionActionPerformed
 
-    private void cantidadJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cantidadJTextFieldActionPerformed
+    private void campoTextoCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoTextoCantidadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cantidadJTextFieldActionPerformed
+    }//GEN-LAST:event_campoTextoCantidadActionPerformed
 
-    private void buscarArticuloJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarArticuloJButtonActionPerformed
+    private void botonBuscarArticuloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarArticuloActionPerformed
         try {
             // TODO add your handling code here:
             
             baseDeDatos.conectarConMySQL("root", "", "ElCaballoDeHierro");
-            String claveDeArticulo= claveJTextField.getText();
-            ResultSet resultadosConsultaSQL= baseDeDatos.buscarTupla("Articulos", claveDeArticulo);
+            String claveDeArticulo= campoTextoClave.getText();
+            ResultSet resultadosConsultaSQL= baseDeDatos.buscarTupla("Articulos", "Clave", claveDeArticulo);
             resultadosConsultaSQL.next(); // Permite acceder al String del resultado de consulta el cual por default 
             // es una direccion de memoria
-            descripcionJTextField.setVisible(true);
-            descripcionJLabel.setVisible(true);
-            cantidadJTextField.setVisible(true);
-            cantidadJLabel.setVisible(true);
-            precioJTextField.setVisible(true);
-            precioJLabel.setVisible(true);
-            vaciarCamposJButton.setVisible(true);
-            descripcionJTextField.setText(resultadosConsultaSQL.getString("Descripcion"));
-            cantidadJTextField.setText(resultadosConsultaSQL.getString("Cantidad"));
-            precioJTextField.setText(resultadosConsultaSQL.getString("Precio"));
+            campoTextoDescripcion.setVisible(true);
+            etiquetaDescripcion.setVisible(true);
+            campoTextoCantidad.setVisible(true);
+            etiquetaCantidad.setVisible(true);
+            campoTextoPrecio.setVisible(true);
+            etiquetaPrecio.setVisible(true);
+            botonVaciarCampos.setVisible(true);
+            campoTextoDescripcion.setText(resultadosConsultaSQL.getString("Descripcion"));
+            campoTextoCantidad.setText(resultadosConsultaSQL.getString("Cantidad"));
+            campoTextoPrecio.setText(resultadosConsultaSQL.getString("Precio"));
             baseDeDatos.desconectarConMySQL();
             
             
         }
-        catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Artículo no encontrado");
+        catch (SQLException excepcionElementoNoHallado) {
+            JOptionPane.showMessageDialog(null, excepcionElementoNoHallado.getMessage()+"\n"+"Elemento no encontrado");
+        } catch (ClassNotFoundException excepcionBibliotecaNoHallada) {
+             JOptionPane.showMessageDialog(null, excepcionBibliotecaNoHallada.getMessage()+"\n"+"Biblioteca no encontrada");  
         }
         
         
-    }//GEN-LAST:event_buscarArticuloJButtonActionPerformed
+    }//GEN-LAST:event_botonBuscarArticuloActionPerformed
 
-    private void vaciarCamposJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vaciarCamposJButtonActionPerformed
+    private void botonVaciarCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVaciarCamposActionPerformed
         // TODO add your handling code here:
-        claveJTextField.setText(null);
-        descripcionJTextField.setText(null);
-        cantidadJTextField.setText(null);
-        precioJTextField.setText(null);
-    }//GEN-LAST:event_vaciarCamposJButtonActionPerformed
+        campoTextoClave.setText("");
+        campoTextoDescripcion.setText("");
+        campoTextoCantidad.setText("");
+        campoTextoPrecio.setText("");
+    }//GEN-LAST:event_botonVaciarCamposActionPerformed
 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buscarArticuloJButton;
-    private javax.swing.JLabel cantidadJLabel;
-    private javax.swing.JTextField cantidadJTextField;
-    private javax.swing.JTextField claveJTextField;
-    private javax.swing.JLabel descripcionJLabel;
-    private javax.swing.JTextField descripcionJTextField;
-    private javax.swing.JLabel ingresarClaveJLabel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel precioJLabel;
-    private javax.swing.JTextField precioJTextField;
-    private javax.swing.JButton vaciarCamposJButton;
+    private javax.swing.JButton botonBuscarArticulo;
+    private javax.swing.JButton botonVaciarCampos;
+    private javax.swing.JTextField campoTextoCantidad;
+    private javax.swing.JTextField campoTextoClave;
+    private javax.swing.JTextField campoTextoDescripcion;
+    private javax.swing.JTextField campoTextoPrecio;
+    private javax.swing.JLabel etiquetaCantidad;
+    private javax.swing.JLabel etiquetaDescripcion;
+    private javax.swing.JLabel etiquetaIngresarClave;
+    private javax.swing.JLabel etiquetaPrecio;
     // End of variables declaration//GEN-END:variables
 }

@@ -30,33 +30,33 @@ public class VentanaInventario_EliminarArticulo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel3 = new javax.swing.JLabel();
-        claveJTextField = new javax.swing.JTextField();
-        borrarArticuloJButton = new javax.swing.JButton();
-        cancelarJButton = new javax.swing.JButton();
+        etiquetaClave = new javax.swing.JLabel();
+        campoTextoClave = new javax.swing.JTextField();
+        botonBorrarArticulo = new javax.swing.JButton();
+        botonCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Eliminar artículo");
         setResizable(false);
 
-        jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel3.setText("Clave");
+        etiquetaClave.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        etiquetaClave.setText("Clave");
 
-        claveJTextField.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        campoTextoClave.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
-        borrarArticuloJButton.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        borrarArticuloJButton.setText("Borrar Artículo");
-        borrarArticuloJButton.addActionListener(new java.awt.event.ActionListener() {
+        botonBorrarArticulo.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        botonBorrarArticulo.setText("Borrar Artículo");
+        botonBorrarArticulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                borrarArticuloJButtonActionPerformed(evt);
+                botonBorrarArticuloActionPerformed(evt);
             }
         });
 
-        cancelarJButton.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        cancelarJButton.setText("Cancelar");
-        cancelarJButton.addActionListener(new java.awt.event.ActionListener() {
+        botonCancelar.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        botonCancelar.setText("Cancelar");
+        botonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelarJButtonActionPerformed(evt);
+                botonCancelarActionPerformed(evt);
             }
         });
 
@@ -68,14 +68,14 @@ public class VentanaInventario_EliminarArticulo extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(borrarArticuloJButton)
+                        .addComponent(botonBorrarArticulo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cancelarJButton)
+                        .addComponent(botonCancelar)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
+                        .addComponent(etiquetaClave)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(claveJTextField)))
+                        .addComponent(campoTextoClave)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -83,23 +83,23 @@ public class VentanaInventario_EliminarArticulo extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(claveJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
+                    .addComponent(campoTextoClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(etiquetaClave))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(borrarArticuloJButton)
-                    .addComponent(cancelarJButton))
+                    .addComponent(botonBorrarArticulo)
+                    .addComponent(botonCancelar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void borrarArticuloJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarArticuloJButtonActionPerformed
+    private void botonBorrarArticuloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBorrarArticuloActionPerformed
        try{
        ManejadorBD baseDeDatos = new ManejadorBD();
        baseDeDatos.conectarConMySQL("root", "", "ElCaballoDeHierro");
-       baseDeDatos.eliminarTupla("Articulos", claveJTextField.getText());
+       baseDeDatos.eliminarTupla("Articulos", "Clave", campoTextoClave.getText());
        baseDeDatos.desconectarConMySQL();
        this.dispose();
        }
@@ -107,18 +107,18 @@ public class VentanaInventario_EliminarArticulo extends javax.swing.JFrame {
        {
            JOptionPane.showMessageDialog(null, "Artículo no encontrado");
        }
-    }//GEN-LAST:event_borrarArticuloJButtonActionPerformed
+    }//GEN-LAST:event_botonBorrarArticuloActionPerformed
 
-    private void cancelarJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarJButtonActionPerformed
+    private void botonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCancelarActionPerformed
      this.dispose();
-    }//GEN-LAST:event_cancelarJButtonActionPerformed
+    }//GEN-LAST:event_botonCancelarActionPerformed
 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton borrarArticuloJButton;
-    private javax.swing.JButton cancelarJButton;
-    private javax.swing.JTextField claveJTextField;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton botonBorrarArticulo;
+    private javax.swing.JButton botonCancelar;
+    private javax.swing.JTextField campoTextoClave;
+    private javax.swing.JLabel etiquetaClave;
     // End of variables declaration//GEN-END:variables
 }

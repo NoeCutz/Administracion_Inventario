@@ -43,7 +43,7 @@ public class ManejadorBD {
     }
 
     public void insertarTupla(String nombreDeTabla, String valoresTupla) throws SQLException {
-            String consultaSQL = "INSERT INTO " + nombreDeTabla + " VALUES("+valoresTupla;
+            String consultaSQL = "INSERT INTO " + nombreDeTabla + " VALUES("+valoresTupla+")";
             Statement sentenciaSQL = conexionConBD.createStatement();
             sentenciaSQL.executeUpdate(consultaSQL);
     }

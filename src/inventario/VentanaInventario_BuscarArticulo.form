@@ -27,43 +27,39 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="etiquetaIngresarClave" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="ingresarClaveJLabel" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="claveJTextField" min="-2" pref="73" max="-2" attributes="0"/>
+                      <Component id="campoTextoClave" min="-2" pref="73" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                      <Component id="buscarArticuloJButton" min="-2" max="-2" attributes="0"/>
+                      <Component id="botonBuscarArticulo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="vaciarCamposJButton" min="-2" max="-2" attributes="0"/>
+                      <Component id="botonVaciarCampos" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                              <Component id="precioJLabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="etiquetaPrecio" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="descripcionJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cantidadJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="etiquetaDescripcion" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="etiquetaCantidad" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="descripcionJTextField" min="-2" pref="158" max="-2" attributes="0"/>
+                          <Component id="campoTextoDescripcion" min="-2" pref="158" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="cantidadJTextField" min="-2" pref="66" max="-2" attributes="0"/>
-                              <Component id="precioJTextField" min="-2" pref="66" max="-2" attributes="0"/>
+                              <Component id="campoTextoCantidad" min="-2" pref="66" max="-2" attributes="0"/>
+                              <Component id="campoTextoPrecio" min="-2" pref="66" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -76,30 +72,28 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-              <Component id="ingresarClaveJLabel" min="-2" max="-2" attributes="0"/>
+              <Component id="etiquetaIngresarClave" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="claveJTextField" min="-2" max="-2" attributes="0"/>
+              <Component id="campoTextoClave" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="descripcionJLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="descripcionJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="etiquetaDescripcion" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="campoTextoDescripcion" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="cantidadJLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cantidadJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="etiquetaCantidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="campoTextoCantidad" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="precioJLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="precioJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="etiquetaPrecio" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="campoTextoPrecio" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="buscarArticuloJButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="vaciarCamposJButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="botonBuscarArticulo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="botonVaciarCampos" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="24" max="32767" attributes="0"/>
           </Group>
@@ -107,56 +101,63 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
-    </Component>
-    <Component class="javax.swing.JLabel" name="ingresarClaveJLabel">
+    <Component class="javax.swing.JLabel" name="etiquetaIngresarClave">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ingrese la clave del art&#xed;culo"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="descripcionJLabel">
+    <Component class="javax.swing.JLabel" name="etiquetaDescripcion">
       <Properties>
         <Property name="text" type="java.lang.String" value="Descripci&#xf3;n"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="cantidadJLabel">
+    <Component class="javax.swing.JLabel" name="etiquetaCantidad">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cantidad"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="precioJLabel">
+    <Component class="javax.swing.JLabel" name="etiquetaPrecio">
       <Properties>
         <Property name="text" type="java.lang.String" value="Precio"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="claveJTextField">
+    <Component class="javax.swing.JTextField" name="campoTextoClave">
     </Component>
-    <Component class="javax.swing.JTextField" name="descripcionJTextField">
+    <Component class="javax.swing.JTextField" name="campoTextoDescripcion">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="descripcionJTextFieldActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoTextoDescripcionActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="cantidadJTextField">
+    <Component class="javax.swing.JTextField" name="campoTextoCantidad">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cantidadJTextFieldActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoTextoCantidadActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="precioJTextField">
+    <Component class="javax.swing.JTextField" name="campoTextoPrecio">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="buscarArticuloJButton">
+    <Component class="javax.swing.JButton" name="botonBuscarArticulo">
       <Properties>
         <Property name="text" type="java.lang.String" value="Buscar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscarArticuloJButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonBuscarArticuloActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="vaciarCamposJButton">
+    <Component class="javax.swing.JButton" name="botonVaciarCampos">
       <Properties>
         <Property name="text" type="java.lang.String" value="Vaciar Campos"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="vaciarCamposJButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonVaciarCamposActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
