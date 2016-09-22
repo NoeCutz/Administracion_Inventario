@@ -5,6 +5,17 @@ import javax.swing.JOptionPane;
 
 public class VentanaInventario_AgregarArticulo extends javax.swing.JFrame {
 
+    private javax.swing.JButton botonAgregar;
+    private javax.swing.JButton botonCancelar;
+    private javax.swing.JTextField campoTextoCantidad;
+    private javax.swing.JTextField campoTextoClave;
+    private javax.swing.JTextField campoTextoDescripcion;
+    private javax.swing.JTextField campoTextoPrecio;
+    private javax.swing.JLabel etiquetaCantidad;
+    private javax.swing.JLabel etiquetaClave;
+    private javax.swing.JLabel etiquetaDescripcion;
+    private javax.swing.JLabel etiquetaPrecio;
+
     public VentanaInventario_AgregarArticulo() {
         initComponents();
 
@@ -152,16 +163,7 @@ public class VentanaInventario_AgregarArticulo extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCancelarActionPerformed
 
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonAgregar;
-    private javax.swing.JButton botonCancelar;
-    private javax.swing.JTextField campoTextoCantidad;
-    private javax.swing.JTextField campoTextoClave;
-    private javax.swing.JTextField campoTextoDescripcion;
-    private javax.swing.JTextField campoTextoPrecio;
-    private javax.swing.JLabel etiquetaCantidad;
-    private javax.swing.JLabel etiquetaClave;
-    private javax.swing.JLabel etiquetaDescripcion;
-    private javax.swing.JLabel etiquetaPrecio;
-    // End of variables declaration//GEN-END:variables
+    
+
+    
 }
