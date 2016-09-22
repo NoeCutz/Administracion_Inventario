@@ -140,9 +140,9 @@ public class VentanaInventario_AgregarArticulo extends javax.swing.JFrame {
             baseDeDatos.insertarTupla("Articulos",valores);
             baseDeDatos.desconectarConMySQL();
         } catch (ClassNotFoundException excepcionBibliotecaNoHallada) {
-             JOptionPane.showMessageDialog(null, "La bilioteca MySQL_conector no hallada");
+             JOptionPane.showMessageDialog(null, excepcionBibliotecaNoHallada.getMessage()+"\n"+"Biblioteca no encontrada");  
         } catch (SQLException excepcionElementoNoHallado) {
-            JOptionPane.showMessageDialog(null, "Elemento no encontrado");
+            JOptionPane.showMessageDialog(null, excepcionElementoNoHallado.getMessage()+"\n"+"Elemento no encontrado");
         }
         
         
