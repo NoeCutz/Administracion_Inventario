@@ -16,7 +16,7 @@ import javax.swing.JLabel;
 
 public class VentanaPrincipal extends javax.swing.JFrame {
 
-    InputStream imagenDeFondo;
+    private InputStream imagenDeFondo;
     public VentanaPrincipal() {
       
             initComponents();
