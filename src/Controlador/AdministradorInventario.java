@@ -18,33 +18,42 @@ import javax.swing.JOptionPane;
  * @author rodrigopeniche
  */
 public class AdministradorInventario {
+    private ManejadorBD manejadorBaseDatosInventario;
+    
+    public AdministradorInventario(){
+        try {
+            manejadorBaseDatosInventario.conectarConBD("root", "", "ElCaballoDeHierro");
+        } catch (ClassNotFoundException excepcionBibliotecaNoHallada) {
+            JOptionPane.showMessageDialog(null, excepcionBibliotecaNoHallada.getMessage() + "\n" + "No se puede conectar a la base de datos porque la libreria MySQL Conector no se encuentra");
+        } catch (SQLException excepcionBaseDatosNoEncontrada) {
+            JOptionPane.showMessageDialog(null,excepcionBaseDatosNoEncontrada .getMessage() + "\n" + "No se puede conectar a la base de datos porque no existe la base de datos");
+        }
+    }
     
     public void agregarArticulo(Articulo articulo)
     {
-         ManejadorBD baseDeDatos = new ManejadorBD();
+         
         try {
-            baseDeDatos.conectarConBD("root", "", "ElCaballoDeHierro");
-            String valores = "\"" + articulo.getClave() + "\", "
+            
+            String valoresArticulo = "\"" + articulo.getClave() + "\", "
                     + "\"" + articulo.getDescripcion() + "\", "
                     + "\"" + articulo.getCantidad() + "\", "
                     + "\"" + articulo.getPrecio() + "\"";
-            baseDeDatos.insertarTupla("Articulos", valores);
-            baseDeDatos.conectarConBD();
-        } catch (ClassNotFoundException excepcionBibliotecaNoHallada) {
-            JOptionPane.showMessageDialog(null, excepcionBibliotecaNoHallada.getMessage() + "\n" + "Biblioteca no encontrada");
-        } catch (SQLException excepcionElementoNoHallado) {
-            JOptionPane.showMessageDialog(null, excepcionElementoNoHallado.getMessage() + "\n" + "Elemento no encontrado");
+            manejadorBaseDatosInventario.insertarTupla("Articulos", valoresArticulo);
+            manejadorBaseDatosInventario.conectarConBD();
+        } catch (SQLException excepcionElementoNoAgregado) {
+            JOptionPane.showMessageDialog(null, excepcionElementoNoAgregado.getMessage() + "\n" + "Elemento no agregado");
         }
 
     }
 
-    public ResultSet buscarArticulo(String claveDeArticulo) {
-        ManejadorBD baseDeDatos = new ManejadorBD();
+    public ResultSet buscarArticulo(String claveArticulo) {
+      
         ResultSet resultadoConsultaSQL = null;
         try {
-            resultadoConsultaSQL = baseDeDatos.buscarTupla("Articulos", "Clave", claveDeArticulo);
-        } catch (SQLException ex) {
-            Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
+            resultadoConsultaSQL = manejadorBaseDatosInventario.buscarTupla("Articulos", "Clave", claveArticulo);
+        } catch (SQLException excepcionElementoNoEncontrado) {
+            
         }
 
         return resultadoConsultaSQL;
@@ -54,10 +63,9 @@ public class AdministradorInventario {
     public void eliminarArticulo(String claveDeArticulo){
     
         try{
-       ManejadorBD baseDeDatos = new ManejadorBD();
-       baseDeDatos.conectarConBD("root", "", "ElCaballoDeHierro");
-       baseDeDatos.eliminarTupla("Articulos", "Clave", claveDeArticulo);
-       baseDeDatos.conectarConBD();
+       manejadorBaseDatosInventario.conectarConBD("root", "", "ElCaballoDeHierro");
+       manejadorBaseDatosInventario.eliminarTupla("Articulos", "Clave", claveDeArticulo);
+       manejadorBaseDatosInventario.conectarConBD();
        } catch (ClassNotFoundException ex) {
            JOptionPane.showMessageDialog(null, "Elemento no encontrado");
        } catch (SQLException ex) {
@@ -68,8 +76,7 @@ public class AdministradorInventario {
     public ResultSet verInventario(){
         ResultSet resultadoConsultaSQL= null;
         try {
-            ManejadorBD baseDeDatos= new ManejadorBD();
-            resultadoConsultaSQL= baseDeDatos.obtenerTuplas("Articulos");
+            resultadoConsultaSQL= manejadorBaseDatosInventario.obtenerTuplas("Articulos");
         } catch (SQLException ex) {
             Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
         }
