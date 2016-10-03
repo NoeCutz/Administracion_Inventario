@@ -1,7 +1,7 @@
 package Vista.Inventario;
 
 import Modelo.Articulo;
-import Controlador.Administrador;
+import Controlador.AdministradorInventario;
 
 
 public class VentanaInventario_AgregarArticulo extends javax.swing.JFrame {
@@ -130,7 +130,7 @@ public class VentanaInventario_AgregarArticulo extends javax.swing.JFrame {
     private void botonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarActionPerformed
        
         Articulo articulo= new Articulo(campoTextoClave.getText(), campoTextoDescripcion.getText(), Integer.parseInt(campoTextoCantidad.getText()), Integer.parseInt(campoTextoPrecio.getText()));
-        Administrador admin= new Administrador();
+        AdministradorInventario admin= new AdministradorInventario();
         admin.agregarArticulo(articulo);
         this.dispose();
        

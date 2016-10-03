@@ -5,7 +5,7 @@
  */
 package Vista.Inventario;
 
-import Controlador.Administrador;
+import Controlador.AdministradorInventario;
 import Controlador.ManejadorBD;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -42,7 +42,7 @@ public class VentanaInventario_VerInventario extends javax.swing.JFrame {
     private void generarTablaDeArticulos() throws SQLException, ClassNotFoundException
     {
         
-        Administrador admin= new Administrador();
+        AdministradorInventario admin= new AdministradorInventario();
         ManejadorBD baseDeDatos= new ManejadorBD();
         baseDeDatos.conectarConBD("root", "", "ElCaballoDeHierro");
         ResultSet resultadosConsultaSQL= admin.verInventario();

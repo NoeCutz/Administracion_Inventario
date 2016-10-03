@@ -6,7 +6,7 @@
 
 package Vista.Inventario;
 
-import Controlador.Administrador;
+import Controlador.AdministradorInventario;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
@@ -99,7 +99,7 @@ public class VentanaInventario_EliminarArticulo extends javax.swing.JFrame {
 
     private void botonBorrarArticuloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBorrarArticuloActionPerformed
        String claveDeArticulo= campoTextoClave.getText();
-       Administrador admin= new Administrador();
+       AdministradorInventario admin= new AdministradorInventario();
        admin.eliminarArticulo(claveDeArticulo);
        this.dispose();
        

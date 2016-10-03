@@ -5,7 +5,7 @@
  */
 package Vista.Inventario;
 
-import Controlador.Administrador;
+import Controlador.AdministradorInventario;
 import Controlador.ManejadorBD;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -173,7 +173,7 @@ public class VentanaInventario_BuscarArticulo extends javax.swing.JFrame {
             
             baseDeDatos.conectarConBD("root", "", "ElCaballoDeHierro");
             String claveDeArticulo= campoTextoClave.getText();
-            Administrador admin= new Administrador();
+            AdministradorInventario admin= new AdministradorInventario();
             ResultSet resultadosConsultaSQL= admin.buscarArticulo(claveDeArticulo);
             resultadosConsultaSQL.next(); // Permite acceder al String del resultado de consulta el cual por default 
             // es una direccion de memoria

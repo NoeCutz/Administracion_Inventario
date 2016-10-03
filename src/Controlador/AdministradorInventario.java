@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  *
  * @author rodrigopeniche
  */
-public class Administrador {
+public class AdministradorInventario {
     
     public void agregarArticulo(Articulo articulo)
     {
@@ -44,7 +44,7 @@ public class Administrador {
         try {
             resultadoConsultaSQL = baseDeDatos.buscarTupla("Articulos", "Clave", claveDeArticulo);
         } catch (SQLException ex) {
-            Logger.getLogger(Administrador.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return resultadoConsultaSQL;
@@ -71,7 +71,7 @@ public class Administrador {
             ManejadorBD baseDeDatos= new ManejadorBD();
             resultadoConsultaSQL= baseDeDatos.obtenerTuplas("Articulos");
         } catch (SQLException ex) {
-            Logger.getLogger(Administrador.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         return resultadoConsultaSQL;
