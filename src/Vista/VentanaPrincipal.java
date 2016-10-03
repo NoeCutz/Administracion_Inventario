@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class VentanaPrincipal extends javax.swing.JFrame {
 
@@ -20,17 +21,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal() {
       
             initComponents();
-            imagenDeFondo= VentanaPrincipal.class.getResourceAsStream("/imagenes/imagenDeFondo.jpg");
-            BufferedImage imagenDeFondoImg = null;
-        try {
-            imagenDeFondoImg = ImageIO.read(imagenDeFondo);
-        } catch (IOException ex) {
-            Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-        }
-           
-        Image dimg = imagenDeFondoImg.getScaledInstance(666, 524, Image.SCALE_SMOOTH);
-        ImageIcon imageIcon = new ImageIcon(dimg);
-        setContentPane(new JLabel(imageIcon));
+//            imagenDeFondo= VentanaPrincipal.class.getResourceAsStream("/imagenes/imagenDeFondo.jpg");
+//            BufferedImage imagenDeFondoImg = null;
+//        try {
+//            imagenDeFondoImg = ImageIO.read(imagenDeFondo);
+//        } catch (IOException ex) {
+//            Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//           
+//        Image dimg = imagenDeFondoImg.getScaledInstance(666, 524, Image.SCALE_SMOOTH);
+//        ImageIcon imageIcon = new ImageIcon(dimg);
+//        setContentPane(new JLabel(imageIcon));
     }
     
     
@@ -39,6 +40,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panelPrincipal = new javax.swing.JPanel();
         menuInventario = new javax.swing.JMenuBar();
         subMenuInventario = new javax.swing.JMenu();
         menuItemVerInventario = new javax.swing.JMenuItem();
@@ -46,6 +48,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         menuItemeEliminarInventario = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
+        panelPrincipal.setLayout(panelPrincipalLayout);
+        panelPrincipalLayout.setHorizontalGroup(
+            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 646, Short.MAX_VALUE)
+        );
+        panelPrincipalLayout.setVerticalGroup(
+            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 481, Short.MAX_VALUE)
+        );
 
         subMenuInventario.setText("Inventario");
 
@@ -81,11 +94,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 666, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 503, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -94,8 +113,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void menuItemAgregarInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemAgregarInventarioActionPerformed
         // TODO add your handling code here:
         // Inv= inventario
-        VentanaInventario_AgregarArticulo ventanaAgregarArticuloInv = new VentanaInventario_AgregarArticulo();
-        ventanaAgregarArticuloInv.setVisible(true);
+        JPanel pa = new Vista.Inventario.PanelAgregarArticulo();
+        this.panelPrincipal.add(pa);
+        this.panelPrincipal.repaint();
+        
+//        VentanaInventario_AgregarArticulo ventanaAgregarArticuloInv = new VentanaInventario_AgregarArticulo();
+//        ventanaAgregarArticuloInv.setVisible(true);
     }//GEN-LAST:event_menuItemAgregarInventarioActionPerformed
 
     private void menuItemVerInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemVerInventarioActionPerformed
@@ -120,6 +143,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuItemAgregarInventario;
     private javax.swing.JMenuItem menuItemVerInventario;
     private javax.swing.JMenuItem menuItemeEliminarInventario;
+    private javax.swing.JPanel panelPrincipal;
     private javax.swing.JMenu subMenuInventario;
     // End of variables declaration//GEN-END:variables
 }

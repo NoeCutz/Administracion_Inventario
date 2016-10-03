@@ -21,6 +21,7 @@ public class AdministradorInventario {
     private ManejadorBD manejadorBaseDatosInventario;
     
     public AdministradorInventario(){
+        manejadorBaseDatosInventario = new ManejadorBD();
         try {
             manejadorBaseDatosInventario.conectarConBD("root", "", "ElCaballoDeHierro");
         } catch (ClassNotFoundException excepcionBibliotecaNoHallada) {
