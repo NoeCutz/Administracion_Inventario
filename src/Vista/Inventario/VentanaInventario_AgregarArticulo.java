@@ -131,7 +131,7 @@ public class VentanaInventario_AgregarArticulo extends javax.swing.JFrame {
        
         Articulo articulo= new Articulo(campoTextoClave.getText(), campoTextoDescripcion.getText(), Integer.parseInt(campoTextoCantidad.getText()), Integer.parseInt(campoTextoPrecio.getText()));
         AdministradorInventario admin= new AdministradorInventario();
-        admin.agregarArticulo(articulo);
+        admin.agregar(articulo);
         this.dispose();
        
     }//GEN-LAST:event_botonAgregarActionPerformed

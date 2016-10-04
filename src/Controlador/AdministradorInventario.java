@@ -17,10 +17,11 @@ import javax.swing.JOptionPane;
  *
  * @author rodrigopeniche
  */
-public class AdministradorInventario {
+public class AdministradorInventario implements Administrador {
     private ManejadorBD manejadorBaseDatosInventario;
     
     public AdministradorInventario(){
+        manejadorBaseDatosInventario = new ManejadorBD();
         try {
             manejadorBaseDatosInventario.conectarConBD("root", "", "ElCaballoDeHierro");
         } catch (ClassNotFoundException excepcionBibliotecaNoHallada) {
@@ -30,9 +31,9 @@ public class AdministradorInventario {
         }
     }
     
-    public void agregarArticulo(Articulo articulo)
+    public void agregar(Object objetoAAgregar)
     {
-         
+         Articulo articulo = (Articulo) objetoAAgregar;
         try {
             
             String valoresArticulo = "\"" + articulo.getClave() + "\", "
@@ -60,8 +61,8 @@ public class AdministradorInventario {
 
     }
     
-    public void eliminarArticulo(String claveDeArticulo){
-    
+    public void eliminar(Object objetoAEliminar){
+      String claveDeArticulo = (String) objetoAEliminar;
         try{
        manejadorBaseDatosInventario.conectarConBD("root", "", "ElCaballoDeHierro");
        manejadorBaseDatosInventario.eliminarTupla("Articulos", "Clave", claveDeArticulo);
