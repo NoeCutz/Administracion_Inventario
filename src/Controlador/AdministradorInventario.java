@@ -22,23 +22,35 @@ public class AdministradorInventario {
     
     public AdministradorInventario(){
         manejadorBD = new ManejadorBD();
-        
-        try {
-            manejadorBD.conectarConBD( "root", "", "ElCaballoDeHierro" );
+      
+    }
+   
+   public void iniciarManejadorBD(){
+         try {
+            manejadorBD.conectarConBD ( "root", "", "ElCaballoDeHierro" );
         } 
-        catch (ClassNotFoundException excepcionBibliotecaNoHallada) {
-            JOptionPane.showMessageDialog(null, excepcionBibliotecaNoHallada.getMessage() + 
-            "\nNo se puede conectar a la base de datos porque la libreria MySQL Conector no se encuentra");
+        catch ( ClassNotFoundException excepcionBibliotecaNoHallada ) {
+            JOptionPane.showMessageDialog ( null, excepcionBibliotecaNoHallada.getMessage() + 
+                    "\nNo se puede conectar a la base de datos porque la libreria MySQL Conector no se encuentra");
         } 
         catch ( SQLException excepcionBaseDatosNoEncontrada ) {
-            JOptionPane.showMessageDialog( null, excepcionBaseDatosNoEncontrada.getMessage() +  
-            "\nNo se puede conectar a la base de datos porque no existe la base de datos" );
+            JOptionPane.showMessageDialog ( null, excepcionBaseDatosNoEncontrada.getMessage() + 
+                    "\nNo se puede conectar a la base de datos porque no existe la base de datos" );
         }
-    }
-    
-   public void agregarArticulo( String clave, String descripcion, int cantidad, int precio ){
-        Articulo articulo= new Articulo( clave, descripcion, cantidad, precio );
-        
+   } 
+   
+   public void finalizarManejadorBD(){
+        try {
+            manejadorBD.desconectarConBD();
+        } catch (SQLException excepcionConexionNoCerrada) {
+            JOptionPane.showMessageDialog ( null, excepcionConexionNoCerrada.getMessage() +
+                     "\nNo se puede desconectar de la base de datos" );
+        }
+   } 
+   
+   public void agregarArticulo ( String clave, String descripcion, int cantidad, int precio ){
+        Articulo articulo= new Articulo ( clave, descripcion, cantidad, precio );
+        iniciarManejadorBD();
         try {
             String valoresArticulo = "\"" + articulo.getClave() + "\", " + 
                       "\"" + articulo.getDescripcion() + "\", " +
@@ -48,47 +60,50 @@ public class AdministradorInventario {
             manejadorBD.desconectarConBD();
             JOptionPane.showMessageDialog(null, "Artículo agregado exitosamente");
         } 
-        catch (SQLException excepcionElementoNoAgregado) {
-            JOptionPane.showMessageDialog(null, excepcionElementoNoAgregado.getMessage() + 
-            "\nElemento no agregado");
+        catch ( SQLException excepcionElementoNoAgregado ) {
+            JOptionPane.showMessageDialog ( null, excepcionElementoNoAgregado.getMessage() + 
+            "\nElemento no agregado" );
         }
+        finalizarManejadorBD();
     }
 
-    public ResultSet buscarArticulo( String claveArticulo ) {
+    public ResultSet buscarArticulo ( String claveArticulo ) {
         ResultSet resultadoConsultaSQL = null;
-        
+        iniciarManejadorBD();
         try {
-            resultadoConsultaSQL = manejadorBD.buscarFila( "Articulos", "Clave", claveArticulo );
-            // HAY QUE CERRAR LA MALDITA CONEXION A LA BD
+            resultadoConsultaSQL = manejadorBD.buscarFila ( "Articulos", "Clave", claveArticulo );
+         
         } 
-        catch (SQLException excepcionElementoNoEncontrado) {
+        catch ( SQLException excepcionElementoNoEncontrado ) {
             JOptionPane.showMessageDialog( null, "No se encontró el artículo" );
         }
+        finalizarManejadorBD();
         return resultadoConsultaSQL;
     }
     
-    public void eliminarArticulo( String claveDeArticulo ){
+    public void eliminarArticulo ( String claveDeArticulo ){
+        iniciarManejadorBD();
         try{
-            manejadorBD.eliminarFila( "Articulos", "Clave", claveDeArticulo );
-            manejadorBD.desconectarConBD();
-            JOptionPane.showMessageDialog( null, "Articulo eliminado exitosamente" );
+            manejadorBD.eliminarFila ( "Articulos", "Clave", claveDeArticulo );
+            JOptionPane.showMessageDialog ( null, "Articulo eliminado exitosamente" );
         }  
-        catch (SQLException ex) {
-           JOptionPane.showMessageDialog( null, "Artículo no encontrado" );
+        catch (SQLException excepcionNoEliminado) {
+           JOptionPane.showMessageDialog ( null, "Artículo no eliminado" );
         }
+        
+        finalizarManejadorBD();
     }
     
-    public ResultSet verInventario() throws ClassNotFoundException{
-        ResultSet resultadoConsultaSQL= null;
-        
+    public ResultSet verInventario () throws ClassNotFoundException{
+        ResultSet resultadoConsultaSQL = null;
+        iniciarManejadorBD();
         try {
-            resultadoConsultaSQL= manejadorBD.obtenerFilas( "Articulos" );
-            // HAY QUE ENCONTRAR UNA FORMA DE CERRAR LA CONEXION CON LA BASE DE DATOS
+            resultadoConsultaSQL= manejadorBD.obtenerFilas ( "Articulos" );
         } 
-        catch (SQLException ex) {
-            Logger.getLogger( AdministradorInventario.class.getName() ).log( Level.SEVERE, null, ex );
+        catch (SQLException excepcionNoHayDatos) {
+           JOptionPane.showMessageDialog ( null, "No hay Articulos para mostrar" );
         }
-        
+        finalizarManejadorBD();
         return resultadoConsultaSQL;
     }
 
