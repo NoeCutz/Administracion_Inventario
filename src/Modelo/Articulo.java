@@ -13,10 +13,10 @@ package Modelo;
  */
 public class Articulo {
     
-    private String clave;
-    private String descripcion;
-    private int cantidad;
-    private int precio;
+    private final String clave;
+    private final String descripcion;
+    private final int cantidad;
+    private final int precio;
 
     public Articulo(String clave, String descripcion, int cantidad, int precio) {
         this.clave = clave;
@@ -41,7 +41,5 @@ public class Articulo {
     public int getPrecio() {
         return precio;
     }
-    
-    
     
 }

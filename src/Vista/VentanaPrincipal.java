@@ -1,149 +1,196 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Vista;
 
-import Vista.Inventario.VentanaInventario_AgregarArticulo;
-import Vista.Inventario.VentanaInventario_EliminarArticulo;
-import Vista.Inventario.VentanaInventario_VerInventario;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 
-public class VentanaPrincipal extends javax.swing.JFrame {
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseEvent;
+import javax.swing.*;
 
-    private InputStream imagenDeFondo;
-    public VentanaPrincipal() {
-      
-            initComponents();
-//            imagenDeFondo= VentanaPrincipal.class.getResourceAsStream("/imagenes/imagenDeFondo.jpg");
-//            BufferedImage imagenDeFondoImg = null;
-//        try {
-//            imagenDeFondoImg = ImageIO.read(imagenDeFondo);
-//        } catch (IOException ex) {
-//            Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//           
-//        Image dimg = imagenDeFondoImg.getScaledInstance(666, 524, Image.SCALE_SMOOTH);
-//        ImageIcon imageIcon = new ImageIcon(dimg);
-//        setContentPane(new JLabel(imageIcon));
-    }
+
+/**
+ *
+ * @author rodrigopeniche
+ */
+public class VentanaPrincipal extends JFrame {
+    
+    JMenuBar barraMenuPrincipal;
+    JMenu menuInventario;
+    JMenuItem menuItemVerInventario;
+    JMenuItem menuItemAgregarInventario;
+    PanelAgregarArticulo panelAgregarArticulo;
+    PanelVerInventario panelVerInventario;
+    PanelBuscarArticulo panelBuscarArticulo; 
+    PanelEliminarArticulo panelEliminarArticulo; 
     
     
-
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
-
-        panelPrincipal = new javax.swing.JPanel();
-        menuInventario = new javax.swing.JMenuBar();
-        subMenuInventario = new javax.swing.JMenu();
+    public VentanaPrincipal(){
+       
+        barraMenuPrincipal = new javax.swing.JMenuBar();
+        menuInventario = new javax.swing.JMenu();
         menuItemVerInventario = new javax.swing.JMenuItem();
         menuItemAgregarInventario = new javax.swing.JMenuItem();
-        menuItemeEliminarInventario = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
-        panelPrincipal.setLayout(panelPrincipalLayout);
-        panelPrincipalLayout.setHorizontalGroup(
-            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 646, Short.MAX_VALUE)
-        );
-        panelPrincipalLayout.setVerticalGroup(
-            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 481, Short.MAX_VALUE)
-        );
-
-        subMenuInventario.setText("Inventario");
+        menuInventario.setText("Inventario");
 
         menuItemVerInventario.setText("Ver ");
         menuItemVerInventario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuItemVerInventarioActionPerformed(evt);
+                clickEnVerInventario(evt);
             }
         });
-        subMenuInventario.add(menuItemVerInventario);
+        menuInventario.add(menuItemVerInventario);
 
         menuItemAgregarInventario.setText("Agregar");
         menuItemAgregarInventario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuItemAgregarInventarioActionPerformed(evt);
+                clickEnAgregarArticulo(evt);
             }
         });
-        subMenuInventario.add(menuItemAgregarInventario);
+        menuInventario.add(menuItemAgregarInventario);
 
-        menuItemeEliminarInventario.setText("Eliminar");
-        menuItemeEliminarInventario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuItemeEliminarInventarioActionPerformed(evt);
-            }
-        });
-        subMenuInventario.add(menuItemeEliminarInventario);
+        barraMenuPrincipal.add(menuInventario);
 
-        menuInventario.add(subMenuInventario);
-
-        setJMenuBar(menuInventario);
+        setJMenuBar(barraMenuPrincipal);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 877, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
+        );
+
+        pack();
+    }
+    
+    private void clickEnVerInventario(ActionEvent evt) {
+        panelVerInventario= new PanelVerInventario(this);
+        
+        if(panelAgregarArticulo != null){
+           panelAgregarArticulo.setVisible(false);
+           }
+        else{
+            //
+        }
+        
+        initPanelVerInventario();
+     }
+     
+     
+     private void clickEnAgregarArticulo(ActionEvent evt) {
+         panelAgregarArticulo = new PanelAgregarArticulo();
+         
+         if(panelVerInventario!=null){
+             panelVerInventario.setVisible(false);
+             if(panelBuscarArticulo!=null){
+                 panelBuscarArticulo.setVisible(false);
+             }
+             if(panelEliminarArticulo!=null){
+                 panelEliminarArticulo.setVisible(false);
+             }
+         }
+         else{
+            //
+         }
+         
+         initPanelAgregarArticulo();
+     }
+     
+     void clickEnBuscarArticulo(MouseEvent evt){
+         panelBuscarArticulo= new PanelBuscarArticulo();
+         initPanelBuscarArticulo();
+     }
+     
+     void clickEnEliminarArticulo(MouseEvent evt){
+         panelEliminarArticulo= new PanelEliminarArticulo(panelVerInventario);
+         initPanelEliminarArticulo();
+     }
+     
+     
+    
+     private void initPanelAgregarArticulo() {
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(94, 94, 94)
+                .addComponent(panelAgregarArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(176, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(panelAgregarArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(193, Short.MAX_VALUE))
         );
-
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
-
-    private void menuItemAgregarInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemAgregarInventarioActionPerformed
-        // TODO add your handling code here:
-        // Inv= inventario
-        JPanel pa = new Vista.Inventario.PanelAgregarArticulo();
-        this.panelPrincipal.add(pa);
-        this.panelPrincipal.repaint();
-        
-//        VentanaInventario_AgregarArticulo ventanaAgregarArticuloInv = new VentanaInventario_AgregarArticulo();
-//        ventanaAgregarArticuloInv.setVisible(true);
-    }//GEN-LAST:event_menuItemAgregarInventarioActionPerformed
-
-    private void menuItemVerInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemVerInventarioActionPerformed
-        // TODO add your handling code here:
-        // Inv= inventario
-        VentanaInventario_VerInventario ventanaVerInv= new VentanaInventario_VerInventario();
-        ventanaVerInv.setVisible(true);
-    }//GEN-LAST:event_menuItemVerInventarioActionPerformed
-
-    private void menuItemeEliminarInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemeEliminarInventarioActionPerformed
-        // TODO add your handling code here:
-        // Inv= inventario
-        VentanaInventario_EliminarArticulo ventanaEliminarArticuloInv = new VentanaInventario_EliminarArticulo();
-        ventanaEliminarArticuloInv.setVisible(true);
-    }//GEN-LAST:event_menuItemeEliminarInventarioActionPerformed
-
- 
- 
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuBar menuInventario;
-    private javax.swing.JMenuItem menuItemAgregarInventario;
-    private javax.swing.JMenuItem menuItemVerInventario;
-    private javax.swing.JMenuItem menuItemeEliminarInventario;
-    private javax.swing.JPanel panelPrincipal;
-    private javax.swing.JMenu subMenuInventario;
-    // End of variables declaration//GEN-END:variables
+    }
+     
+     private void initPanelVerInventario(){
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panelVerInventario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(280, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panelVerInventario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(237, Short.MAX_VALUE))
+        );
+     }
+     
+     private void initPanelBuscarArticulo(){
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(235, Short.MAX_VALUE)
+                .addComponent(panelBuscarArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelBuscarArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(216, Short.MAX_VALUE))
+        );
+     }
+     
+     private void initPanelEliminarArticulo(){
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(panelEliminarArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(282, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(342, Short.MAX_VALUE)
+                .addComponent(panelEliminarArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
+        );
+     }
+    
+   
+    
 }
