@@ -40,6 +40,8 @@ class PanelAgregarArticulo extends javax.swing.JPanel {
         campoTextoPrecio = new javax.swing.JTextField();
         botonAgregar = new javax.swing.JButton();
         botonCancelar = new javax.swing.JButton();
+        etiquetaClaveProveedor = new javax.swing.JLabel();
+        campoTextoClaveProveedor = new javax.swing.JTextField();
 
         etiquetaClave.setText("Clave:");
 
@@ -63,6 +65,8 @@ class PanelAgregarArticulo extends javax.swing.JPanel {
             }
         });
 
+        etiquetaClaveProveedor.setText("Clave Proveedor:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -75,13 +79,20 @@ class PanelAgregarArticulo extends javax.swing.JPanel {
                             .addComponent(etiquetaClave)
                             .addComponent(etiquetaDescripcion)
                             .addComponent(etiquetaCantidad)
-                            .addComponent(etiquetaPrecio))
-                        .addGap(8, 8, 8)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(campoTextoClave)
-                            .addComponent(campoTextoDescripcion)
-                            .addComponent(campoTextoCantidad)
-                            .addComponent(campoTextoPrecio, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)))
+                            .addComponent(etiquetaPrecio)
+                            .addComponent(etiquetaClaveProveedor))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(campoTextoDescripcion)
+                                    .addComponent(campoTextoCantidad)
+                                    .addComponent(campoTextoPrecio, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(campoTextoClaveProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(campoTextoClave, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(88, 88, 88)
                         .addComponent(botonAgregar)
@@ -92,11 +103,15 @@ class PanelAgregarArticulo extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(etiquetaClave)
                     .addComponent(campoTextoClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(etiquetaClaveProveedor)
+                    .addComponent(campoTextoClaveProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(etiquetaDescripcion)
                     .addComponent(campoTextoDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -112,19 +127,21 @@ class PanelAgregarArticulo extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonAgregar)
                     .addComponent(botonCancelar))
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarMouseClicked
         // TODO add your handling code here:
         AdministradorInventario admin= new AdministradorInventario();
-        admin.agregarArticulo(campoTextoClave.getText(),
+        admin.agregarArticulo(campoTextoClave.getText(), 
+                            campoTextoClaveProveedor.getText(),
                             campoTextoDescripcion.getText(), 
                             Integer.parseInt(campoTextoCantidad.getText()), 
                             Integer.parseInt(campoTextoPrecio.getText()));
         
         campoTextoClave.setText(null);
+        campoTextoClaveProveedor.setText(null);
         campoTextoDescripcion.setText(null);
         campoTextoCantidad.setText(null);
         campoTextoPrecio.setText(null);
@@ -141,10 +158,12 @@ class PanelAgregarArticulo extends javax.swing.JPanel {
     private javax.swing.JButton botonCancelar;
     private javax.swing.JTextField campoTextoCantidad;
     private javax.swing.JTextField campoTextoClave;
+    private javax.swing.JTextField campoTextoClaveProveedor;
     private javax.swing.JTextField campoTextoDescripcion;
     private javax.swing.JTextField campoTextoPrecio;
     private javax.swing.JLabel etiquetaCantidad;
     private javax.swing.JLabel etiquetaClave;
+    private javax.swing.JLabel etiquetaClaveProveedor;
     private javax.swing.JLabel etiquetaDescripcion;
     private javax.swing.JLabel etiquetaPrecio;
     // End of variables declaration//GEN-END:variables
