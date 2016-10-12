@@ -34,15 +34,31 @@ class ManejadorBD {
     }
     
     void eliminarTabla( String nombreTabla ) throws SQLException {
-        String comandoSQL = "DROP TABLE IF EXISTS" + nombreTabla;
+        String consultaSQL = "DROP TABLE IF EXISTS" + nombreTabla;
         Statement sentenciaSQL = conexionConBD.createStatement();
-        sentenciaSQL.executeUpdate( comandoSQL );
+        sentenciaSQL.executeUpdate(consultaSQL );
     }
 
     void insertarFila( String nombreTabla, String valoresTupla ) throws SQLException {
         String consultaSQL = "INSERT INTO " + nombreTabla + " VALUES("+valoresTupla+")";
         Statement sentenciaSQL = conexionConBD.createStatement();
         sentenciaSQL.executeUpdate( consultaSQL );
+    }
+    
+    void actualizarFila( String nombreTabla, String valorClave, String nuevoValorClave,
+                           String valorDescripcion, String valorCantidad, String valorPrecio) throws SQLException{
+        String campoClave= "Clave";
+        String campoDescripcion= "Descripcion";
+        String campoCantidad= "Cantidad";
+        String campoPrecio= "Precio";
+        String consultaSQL= "UPDATE" + nombreTabla + "SET" + campoClave +"= \"" + nuevoValorClave + "\""
+                                                           + campoDescripcion +"= \"" + valorDescripcion + "\""
+                                                           + campoCantidad +"= \"" + valorCantidad + "\""
+                                                           + campoPrecio +"= \"" + valorPrecio + "\""
+                + "WHERE" + campoClave +"= \"" + valorClave + "\"";
+        Statement sentenciaSQL = conexionConBD.createStatement();
+        sentenciaSQL.executeUpdate(consultaSQL);
+       
     }
     
     void eliminarFila( String nombreTabla, String campoLlavePrimaria, String valorLlavePrimaria ) throws SQLException {
