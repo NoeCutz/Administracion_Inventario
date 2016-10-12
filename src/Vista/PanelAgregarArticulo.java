@@ -135,7 +135,6 @@ class PanelAgregarArticulo extends javax.swing.JPanel {
         // TODO add your handling code here:
         AdministradorInventario admin= new AdministradorInventario();
         admin.agregarArticulo(campoTextoClave.getText(), 
-                            campoTextoClaveProveedor.getText(),
                             campoTextoDescripcion.getText(), 
                             Integer.parseInt(campoTextoCantidad.getText()), 
                             Integer.parseInt(campoTextoPrecio.getText()));

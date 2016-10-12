@@ -14,14 +14,14 @@ package Modelo;
 public class Articulo {
     
     private final String clave;
-    private final String claveProveedor;
+    //private final String claveProveedor;
     private final String descripcion;
     private final int cantidad;
     private final int precio;
 
-    public Articulo ( String clave, String claveProveedor, String descripcion, int cantidad, int precio ) {
+    public Articulo ( String clave, String descripcion, int cantidad, int precio ) {
         this.clave = clave;
-        this.claveProveedor = claveProveedor;
+        //this.claveProveedor = claveProveedor;
         this.descripcion = descripcion;
         this.cantidad = cantidad;
         this.precio = precio;
@@ -31,9 +31,9 @@ public class Articulo {
         return clave;
     }
     
-    public String getClaveProveedor() {
-        return claveProveedor;
-    }
+//    public String getClaveProveedor() {
+//        return claveProveedor;
+//    }
 
     public String getDescripcion() {
         return descripcion;

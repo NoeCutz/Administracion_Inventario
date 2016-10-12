@@ -45,22 +45,34 @@ class ManejadorBD {
         sentenciaSQL.executeUpdate( consultaSQL );
     }
     
+    //Actualizar Fila Exclusivo Articulos
     void actualizarFila( String nombreTabla, String valorClave, String nuevoValorClave,
                            String valorDescripcion, String valorCantidad, String valorPrecio) throws SQLException{
         String campoClave= "Clave";
         String campoDescripcion= "Descripcion";
         String campoCantidad= "Cantidad";
         String campoPrecio= "Precio";
-        String consultaSQL= "UPDATE" + nombreTabla + "SET" + campoClave +"= \"" + nuevoValorClave + "\""
-                                                           + campoDescripcion +"= \"" + valorDescripcion + "\""
-                                                           + campoCantidad +"= \"" + valorCantidad + "\""
+        String consultaSQL= "UPDATE " + nombreTabla + " SET " + campoClave +"= \"" + nuevoValorClave + "\"" + ", "
+                                                           + campoDescripcion +"= \"" + valorDescripcion + "\"" + ", "
+                                                           + campoCantidad +"= \"" + valorCantidad + "\"" + ", " 
                                                            + campoPrecio +"= \"" + valorPrecio + "\""
-                + "WHERE" + campoClave +"= \"" + valorClave + "\"";
+                + " WHERE " + campoClave +"= \"" + valorClave + "\"";
         Statement sentenciaSQL = conexionConBD.createStatement();
         sentenciaSQL.executeUpdate(consultaSQL);
        
     }
     
+    //Actualizar Fila generico
+    void actualizarFila( String nombreTabla, String clave, String[] camposTabla, String[] nuevosValoresCampos) throws SQLException{
+        String consultaSQL;
+        for(int i=0; i<camposTabla.length; i++){
+            consultaSQL= "UPDATE " + nombreTabla + " SET " + camposTabla[i] +"= \"" + nuevosValoresCampos[i] + "\""
+             + " WHERE " + camposTabla[0] +"= \"" + clave + "\"";
+            Statement sentenciaSQL = conexionConBD.createStatement();
+            sentenciaSQL.executeUpdate(consultaSQL);
+        }
+    }
+        
     void eliminarFila( String nombreTabla, String campoLlavePrimaria, String valorLlavePrimaria ) throws SQLException {
         String consultaSQL = "DELETE FROM " + nombreTabla + " WHERE " + campoLlavePrimaria +"= \"" + valorLlavePrimaria + "\"";
         Statement sentenciaSQL = conexionConBD.createStatement();

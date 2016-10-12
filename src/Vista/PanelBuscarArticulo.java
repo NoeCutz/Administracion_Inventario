@@ -6,9 +6,11 @@
 package Vista;
 
 import Controlador.AdministradorInventario;
-import java.sql.ResultSet;
+import Modelo.Articulo;
 import java.sql.SQLException;
-import javax.swing.JOptionPane;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 /**
  *
@@ -28,7 +30,7 @@ class PanelBuscarArticulo extends javax.swing.JPanel {
         etiquetaCantidad.setVisible(false);
         campoTextoPrecio.setVisible(false);
         etiquetaPrecio.setVisible(false);
-        botonVaciarCampos.setVisible(false);
+
     }
 
     /**
@@ -49,7 +51,6 @@ class PanelBuscarArticulo extends javax.swing.JPanel {
         etiquetaPrecio = new javax.swing.JLabel();
         campoTextoPrecio = new javax.swing.JTextField();
         botonBuscar = new javax.swing.JButton();
-        botonVaciarCampos = new javax.swing.JButton();
 
         etiquetaInstruccion.setText("Ingrese la clave del artículo:");
 
@@ -63,13 +64,6 @@ class PanelBuscarArticulo extends javax.swing.JPanel {
         botonBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonBuscarMouseClicked(evt);
-            }
-        });
-
-        botonVaciarCampos.setText("Vaciar Campos");
-        botonVaciarCampos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonVaciarCamposMouseClicked(evt);
             }
         });
 
@@ -95,11 +89,9 @@ class PanelBuscarArticulo extends javax.swing.JPanel {
                                     .addComponent(campoTextoCantidad)
                                     .addComponent(campoTextoPrecio, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(botonBuscar)
-                        .addGap(73, 73, 73)
-                        .addComponent(botonVaciarCampos)))
-                .addContainerGap(46, Short.MAX_VALUE))
+                        .addGap(117, 117, 117)
+                        .addComponent(botonBuscar)))
+                .addContainerGap(120, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,52 +112,41 @@ class PanelBuscarArticulo extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(etiquetaPrecio)
                     .addComponent(campoTextoPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonBuscar)
-                    .addComponent(botonVaciarCampos))
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(botonBuscar)
+                .addContainerGap(47, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscarMouseClicked
-        // TODO add your handling code here:
-        try {
+        try {       
             // TODO add your handling code here:
-            String claveDeArticulo= campoTextoClave.getText();
-            AdministradorInventario admin= new AdministradorInventario();
-            ResultSet resultadosConsultaSQL= admin.buscarArticulo(claveDeArticulo);
-            resultadosConsultaSQL.next(); // Permite acceder al String del resultado de consulta el cual por default 
-            // es una direccion de memoria
+            
+            // TODO add your handling code here:
             campoTextoDescripcion.setVisible(true);
             etiquetaDescripcion.setVisible(true);
             campoTextoCantidad.setVisible(true);
             etiquetaCantidad.setVisible(true);
             campoTextoPrecio.setVisible(true);
             etiquetaPrecio.setVisible(true);
-            botonVaciarCampos.setVisible(true);
             
-            campoTextoDescripcion.setText(resultadosConsultaSQL.getString("Descripcion"));
-            campoTextoCantidad.setText(resultadosConsultaSQL.getString("Cantidad"));
-            campoTextoPrecio.setText(resultadosConsultaSQL.getString("Precio"));
+            String claveDeArticulo= campoTextoClave.getText();
+            AdministradorInventario admin= new AdministradorInventario();
+            Articulo articulo= admin.buscarArticulo(claveDeArticulo);
+            
+            campoTextoDescripcion.setText(articulo.getDescripcion());
+            campoTextoCantidad.setText(String.valueOf(articulo.getCantidad()));
+            campoTextoPrecio.setText(String.valueOf(articulo.getPrecio()));
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(PanelBuscarArticulo.class.getName()).log(Level.SEVERE, null, ex);
         }
-        catch (SQLException excepcionElementoNoHallado) {
-            JOptionPane.showMessageDialog(null, excepcionElementoNoHallado.getMessage()+"\n"+"Elemento no encontrado");
-        } 
+        
     }//GEN-LAST:event_botonBuscarMouseClicked
-
-    private void botonVaciarCamposMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonVaciarCamposMouseClicked
-        // TODO add your handling code here:
-        campoTextoClave.setText(null);
-        campoTextoDescripcion.setText(null);
-        campoTextoCantidad.setText(null);
-        campoTextoPrecio.setText(null);
-    }//GEN-LAST:event_botonVaciarCamposMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonBuscar;
-    private javax.swing.JButton botonVaciarCampos;
     private javax.swing.JTextField campoTextoCantidad;
     private javax.swing.JTextField campoTextoClave;
     private javax.swing.JTextField campoTextoDescripcion;
