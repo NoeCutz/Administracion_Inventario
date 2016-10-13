@@ -15,7 +15,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 
-
 /**
  *
  * @author rodrigopeniche
@@ -51,14 +50,16 @@ public class AdministradorInventario implements Administrador{
     }
 
     @Override
-    public void buscar(Object entidadABuscar) {
+    public Articulo buscar(Object entidadABuscar) {
+        Articulo unArticulo=null;
         try {
-            articuloDAO.buscarArticulo((String)entidadABuscar);
+            unArticulo=articuloDAO.buscarArticulo((String)entidadABuscar);
         } catch (SQLException ex) {
             Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return unArticulo; 
     }
 
     @Override
@@ -73,7 +74,7 @@ public class AdministradorInventario implements Administrador{
     }
 
     @Override
-    public Object obtenerDatos() {
+    public ArrayList<Articulo> obtenerDatos() {
         ArrayList<Articulo> inventario=null;
         try {
             inventario = articuloDAO.obtenerInventario();

@@ -25,7 +25,7 @@ public class AdministadorProveedores implements Administrador{
     }
 
     @Override
-    public void buscar(Object entidadABuscar) {
+    public Proveedor buscar(Object entidadABuscar) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

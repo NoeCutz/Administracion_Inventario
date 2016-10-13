@@ -31,7 +31,7 @@ class PanelVerInventario extends javax.swing.JPanel {
         this.ventanaPrincipal= ventanaPrincipal;
         
         contenidoTablaArticulos= new DefaultTableModel();
-        String camposTabla[] = new String[]{"Clave", "Descripción", "Cantidad", "Precio"};
+        String camposTabla[] = new String[]{"Clave", "ClaveProveedor","Descripción", "Cantidad", "Precio"};
         contenidoTablaArticulos.setColumnIdentifiers(camposTabla);
         tablaDeArticulos.setModel(contenidoTablaArticulos);
         
@@ -159,11 +159,12 @@ class PanelVerInventario extends javax.swing.JPanel {
     private void generarTablaDeArticulos() throws SQLException, ClassNotFoundException{
         
         AdministradorInventario admin= new AdministradorInventario();
-        ArrayList<Articulo> articulos= admin.obtenerInventario();
+        ArrayList<Articulo> articulos= admin.obtenerDatos();
         
          
          for(int numArticulo=0; numArticulo<articulos.size(); numArticulo++){
              contenidoTablaArticulos.addRow(new Object[]{articulos.get(numArticulo).getClave(),
+                    articulos.get(numArticulo).getClaveProveedor(),
                     articulos.get(numArticulo).getDescripcion(),
                     articulos.get(numArticulo).getCantidad(),
                     articulos.get(numArticulo).getPrecio()
