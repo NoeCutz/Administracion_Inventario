@@ -19,7 +19,7 @@ public class Articulo {
     private final int cantidad;
     private final float precio;
 
-    public Articulo ( String clave, String claveProveedor, String descripcion, int cantidad, int precio ) {
+    public Articulo ( String clave, String claveProveedor, String descripcion, int cantidad, float precio ) {
 
         this.clave = clave;
         this.claveProveedor = claveProveedor;
