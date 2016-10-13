@@ -3,27 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Modelo/Articulo.java</file>
-            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Vista/MainWindow.java</file>
-            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Vista/PanelEliminarArticulo.java</file>
-            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Controlador/ManejadorConexionBD.java</file>
-            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Vista/PanelBuscarArticulo.java</file>
             <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Controlador/Administrador.java</file>
+            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Controlador/Main.java</file>
+            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Vista/PanelAgregarArticulo.java</file>
+            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Vista/PanelEliminarArticulo.java</file>
+            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Datos/ProveedorDAO.java</file>
+            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Vista/PanelBuscarArticulo.java</file>
+            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Controlador/ManejadorConexionBD.java</file>
+            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Modelo/Proveedor.java</file>
             <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Vista/VentanaPrincipal.java</file>
             <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Vista/PanelVerInventario.java</file>
-            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Controlador/ManejadorBD.java</file>
-            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Datos/ArticuloDAO.java</file>
-            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Datos/ProveedorDAO.java</file>
+            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Controlador/AdministradorProveedores.java</file>
+            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Controlador/AdministradorInventario.java</file>
             <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Vista/PanelActualizarArticulo.java</file>
-            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Vista/PanelAgregarArticulo.java</file>
-            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Controlador/Main.java</file>
-            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Controlador/AdministradorInventario.java</file>
-            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Controlador/AdministadorProveedores.java</file>
-        </group>
-    </open-files>
-</project-private>
-            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Vista/PanelVerInventario.java</file>
-            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Controlador/AdministradorInventario.java</file>
+            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Datos/ArticuloDAO.java</file>
+            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Modelo/Articulo.java</file>
+            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Vista/MainWindow.java</file>
+            <file>file:/C:/Users/juan/Documents/NetBeansProjects/Proyecto_Construccion/src/Controlador/ManejadorBD.java</file>
         </group>
     </open-files>
 </project-private>
