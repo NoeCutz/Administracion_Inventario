@@ -22,6 +22,9 @@ public class ManejadorConexionBD {
     private static ManejadorConexionBD instanciaManejadorConexion = null;
     private static Connection conexion;
     
+    private ManejadorConexionBD(){
+        
+    }
     
     private static void generarInstancia(){
         instanciaManejadorConexion = new ManejadorConexionBD();

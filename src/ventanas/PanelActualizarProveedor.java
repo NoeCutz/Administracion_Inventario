@@ -33,25 +33,24 @@ class PanelActualizarProveedor extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        etiquetaTitulo = new javax.swing.JLabel();
         campoTextoClave = new javax.swing.JTextField();
         etiquetaNombre = new javax.swing.JLabel();
         campoTextoNombre = new javax.swing.JTextField();
         etiquetaTel = new javax.swing.JLabel();
         campoTextoTel = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        etiquetaDireccion = new javax.swing.JLabel();
         campoTextoDireccion = new javax.swing.JTextField();
         botonGuardarCambios = new javax.swing.JButton();
         botonCancelar = new javax.swing.JButton();
 
-        jLabel1.setText("Ingresa la clave del proveedor a actualizar:");
+        etiquetaTitulo.setText("Ingresa la clave del proveedor a actualizar:");
 
         etiquetaNombre.setText("Nombre:");
 
         etiquetaTel.setText("Teléfono:");
 
-        jLabel3.setText("Dirección:");
+        etiquetaDireccion.setText("Dirección:");
 
         botonGuardarCambios.setText("Guardar cambios");
         botonGuardarCambios.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -90,14 +89,13 @@ class PanelActualizarProveedor extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(campoTextoClave, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)
+                            .addComponent(etiquetaTitulo)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(botonGuardarCambios)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(etiquetaDireccion)
+                                        .addGap(56, 56, 56)))
                                 .addGap(55, 55, 55)
                                 .addComponent(botonCancelar)))
                         .addContainerGap(86, Short.MAX_VALUE))))
@@ -106,7 +104,7 @@ class PanelActualizarProveedor extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addComponent(jLabel1)
+                .addComponent(etiquetaTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(campoTextoClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
@@ -119,11 +117,9 @@ class PanelActualizarProveedor extends javax.swing.JPanel {
                     .addComponent(campoTextoTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                    .addComponent(etiquetaDireccion)
                     .addComponent(campoTextoDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
+                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonGuardarCambios)
                     .addComponent(botonCancelar))
@@ -158,10 +154,9 @@ class PanelActualizarProveedor extends javax.swing.JPanel {
     private javax.swing.JTextField campoTextoDireccion;
     private javax.swing.JTextField campoTextoNombre;
     private javax.swing.JTextField campoTextoTel;
+    private javax.swing.JLabel etiquetaDireccion;
     private javax.swing.JLabel etiquetaNombre;
     private javax.swing.JLabel etiquetaTel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel etiquetaTitulo;
     // End of variables declaration//GEN-END:variables
 }

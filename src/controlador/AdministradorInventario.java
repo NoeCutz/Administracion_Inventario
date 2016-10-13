@@ -5,7 +5,6 @@
  */
 package controlador;
 
-import controlador.Administrador;
 import modelo.datos.AccesoBDArticulos;
 import modelo.Articulo;
 import java.sql.SQLException;
