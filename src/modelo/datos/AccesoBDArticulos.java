@@ -5,7 +5,7 @@
  */
 package modelo.datos;
 
-import Controlador.ManejadorConexionBD;
+import controlador.ManejadorConexionBD;
 import modelo.Articulo;
 import java.sql.Connection;
 import java.sql.ResultSet;
