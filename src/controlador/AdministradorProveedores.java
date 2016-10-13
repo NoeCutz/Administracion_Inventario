@@ -5,7 +5,7 @@
  */
 package controlador;
 
-import modelo.datos.ProveedoresDAO;
+import modelo.datos.ProveedorDAO;
 import modelo.Proveedor;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -19,10 +19,10 @@ import javax.swing.JOptionPane;
  */
 public class AdministradorProveedores implements Administrador{
 
-   private final ProveedoresDAO accesoBDProveedores;
+   private final ProveedorDAO accesoBDProveedores;
     
     public AdministradorProveedores(){
-      accesoBDProveedores = new ProveedoresDAO();
+      accesoBDProveedores = new ProveedorDAO();
     }
 
     @Override
