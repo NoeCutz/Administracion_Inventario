@@ -5,6 +5,8 @@
  */
 package Controlador;
 
+import Controlador.Administrador;
+import Datos.AccesoBDArticulos;
 import Datos.Articulo;
 import java.sql.SQLException;
 import java.util.ArrayList;

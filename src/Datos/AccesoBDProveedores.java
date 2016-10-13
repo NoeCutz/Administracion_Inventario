@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controlador;
+package Datos;
 
+import Controlador.ManejadorConexionBD;
 import Datos.Proveedor;
 import java.sql.Connection;
 import java.sql.ResultSet;

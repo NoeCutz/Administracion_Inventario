@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Datos.AccesoBDProveedores;
 import Datos.Proveedor;
 import java.sql.SQLException;
 import java.util.ArrayList;

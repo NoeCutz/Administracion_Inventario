@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controlador;
+package Datos;
 
+import Controlador.ManejadorConexionBD;
 import Datos.Articulo;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -17,14 +18,14 @@ import java.util.ArrayList;
  * @author juan
  */
 
-class AccesoBDArticulos {
+public class AccesoBDArticulos {
     
     
     private static Connection conexionBD;
     private String consultaBD;
     private Statement sentenciaConsulta;
    
-    ArrayList<Articulo> obtenerInventario() throws ClassNotFoundException, SQLException{
+    public ArrayList<Articulo> obtenerInventario() throws ClassNotFoundException, SQLException{
          ManejadorConexionBD.obtenerInstancia().conectarConBD();
          conexionBD = ManejadorConexionBD.obtenerConexion();
  
@@ -49,7 +50,7 @@ class AccesoBDArticulos {
          return articulos;
     }
    
-    void insertarArticulo( Articulo articuloAInsertar ) throws SQLException, ClassNotFoundException {
+   public void insertarArticulo( Articulo articuloAInsertar ) throws SQLException, ClassNotFoundException {
          ManejadorConexionBD.obtenerInstancia().conectarConBD();
          conexionBD = ManejadorConexionBD.obtenerConexion();
         
@@ -64,7 +65,7 @@ class AccesoBDArticulos {
          ManejadorConexionBD.obtenerInstancia().desconectarConBD();
     }
    
-    void eliminarArticulo( String claveArticulo ) throws SQLException, ClassNotFoundException {
+    public void eliminarArticulo( String claveArticulo ) throws SQLException, ClassNotFoundException {
          ManejadorConexionBD.obtenerInstancia().conectarConBD();
          conexionBD = ManejadorConexionBD.obtenerConexion();
         
@@ -75,7 +76,7 @@ class AccesoBDArticulos {
          ManejadorConexionBD.obtenerInstancia().desconectarConBD();
     }
    
-    Articulo buscarArticulo( String claveArticulo ) throws SQLException, ClassNotFoundException {
+    public Articulo buscarArticulo( String claveArticulo ) throws SQLException, ClassNotFoundException {
          ManejadorConexionBD.obtenerInstancia().conectarConBD();
          conexionBD = ManejadorConexionBD.obtenerConexion();
         
@@ -97,7 +98,7 @@ class AccesoBDArticulos {
          return articulo;
     }
     
-    void actualizarArticulo(Articulo articuloModificado) throws SQLException, ClassNotFoundException{
+    public void actualizarArticulo(Articulo articuloModificado) throws SQLException, ClassNotFoundException{
          ManejadorConexionBD.obtenerInstancia().conectarConBD();
          conexionBD = ManejadorConexionBD.obtenerConexion();
         
