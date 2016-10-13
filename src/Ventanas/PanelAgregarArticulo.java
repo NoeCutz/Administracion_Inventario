@@ -6,7 +6,7 @@
 package Ventanas;
 
 import Controlador.AdministradorInventario;
-import Datos.Articulo;
+import modelo.Articulo;
 
 /**
  *
