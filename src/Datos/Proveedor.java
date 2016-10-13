@@ -3,18 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelo;
+package Datos;
 
 /**
  *
  * @author Noe
  */
 public class Proveedor {
-    private String clave;
-    private String nombre;
-    private String telefono;
-    private String direccion;
+    
+    private final String clave;
+    private final String nombre;
+    private final String telefono;
+    private final String direccion;
 
+    
     public Proveedor ( String clave, String nombre, String telefono, String direccion ) {
         this.clave = clave;
         this.nombre = nombre;

@@ -5,14 +5,13 @@
  */
 package Controlador;
 
-import Datos.ArticuloDAO;
-import Modelo.Articulo;
-import java.sql.ResultSet;
+import Datos.Articulo;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+
 
 
 /**
@@ -21,19 +20,20 @@ import javax.swing.JOptionPane;
  */
 public class AdministradorInventario implements Administrador{
     
-    private ArticuloDAO articuloDAO;
+    private final AccesoBDArticulos accesoBDArticulos;
     
     public AdministradorInventario(){
-      articuloDAO = new ArticuloDAO();
+      accesoBDArticulos = new AccesoBDArticulos();
     }
 
     @Override
     public void agregar(Object entidadAAgregar) {
         try {
-            articuloDAO.insertarArticulo((Articulo)entidadAAgregar);
-        } catch (SQLException ex) {
-            Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+            accesoBDArticulos.insertarArticulo((Articulo)entidadAAgregar);
+            JOptionPane.showMessageDialog(null, "El artículo se ha agregado exitosamente");
+        } 
+        catch (SQLException | ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Ha ocurrido un error al agregar el artículo");
             Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -41,34 +41,37 @@ public class AdministradorInventario implements Administrador{
     @Override
     public void eliminar(Object entidadAEliminar) {
         try {
-            articuloDAO.eliminarArticulo((String)entidadAEliminar);
-        } catch (SQLException ex) {
-            Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+            accesoBDArticulos.eliminarArticulo((String)entidadAEliminar);
+            JOptionPane.showMessageDialog(null, "El articulo se ha eliminado exitosamente");
+        } catch (SQLException | ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Ha ocurrido un error al eliminar el artículo");
             Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     @Override
     public Articulo buscar(Object entidadABuscar) {
-        Articulo unArticulo=null;
+        Articulo articulo = null;
+        
         try {
-            unArticulo=articuloDAO.buscarArticulo((String)entidadABuscar);
-        } catch (SQLException ex) {
-            Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+            articulo = accesoBDArticulos.buscarArticulo((String)entidadABuscar);
+        } 
+        catch (SQLException | ClassNotFoundException ex) {
+            JOptionPane.showConfirmDialog(null, "Ha ocurrido un error al buscar el artículo");
             Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return unArticulo; 
+        
+        return articulo; 
     }
 
     @Override
     public void actualizar(Object entidadAActualizar) {
         try {
-            articuloDAO.actualizarArticulo((Articulo)entidadAActualizar);
-        } catch (SQLException ex) {
-            Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+            accesoBDArticulos.actualizarArticulo((Articulo)entidadAActualizar);
+            JOptionPane.showMessageDialog(null, "Artículo actualizado exitosamente");
+        } 
+        catch (SQLException | ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Ha ocurrido un error al actualizar el artículo");
             Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -76,13 +79,14 @@ public class AdministradorInventario implements Administrador{
     @Override
     public ArrayList<Articulo> obtenerDatos() {
         ArrayList<Articulo> inventario=null;
+        
         try {
-            inventario = articuloDAO.obtenerInventario();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+            inventario = accesoBDArticulos.obtenerInventario();
+        } 
+        catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
         return inventario;
     }
 

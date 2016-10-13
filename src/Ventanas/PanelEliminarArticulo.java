@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Vista;
+package Ventanas;
 
 import Controlador.AdministradorInventario;
 
@@ -34,16 +34,16 @@ class PanelEliminarArticulo extends javax.swing.JPanel {
 
         etiquetaClave = new javax.swing.JLabel();
         campoTextoClave = new javax.swing.JTextField();
-        botonBorrar = new javax.swing.JButton();
+        botonEliminar = new javax.swing.JButton();
         botonCancelar = new javax.swing.JButton();
         etiquetaEliminar = new javax.swing.JLabel();
 
         etiquetaClave.setText("Clave:");
 
-        botonBorrar.setText("Borrar artículo");
-        botonBorrar.addMouseListener(new java.awt.event.MouseAdapter() {
+        botonEliminar.setText("Eliminar articulo");
+        botonEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonBorrarMouseClicked(evt);
+                botonEliminarMouseClicked(evt);
             }
         });
 
@@ -62,18 +62,18 @@ class PanelEliminarArticulo extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(botonBorrar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(etiquetaEliminar)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(etiquetaEliminar)
-                        .addGap(62, 62, 62))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(etiquetaClave)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoTextoClave, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(48, 48, 48)
-                .addComponent(botonCancelar)
-                .addContainerGap(110, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(botonEliminar)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(etiquetaClave)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(campoTextoClave, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(48, 48, 48)
+                        .addComponent(botonCancelar)))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,20 +86,20 @@ class PanelEliminarArticulo extends javax.swing.JPanel {
                     .addComponent(campoTextoClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonBorrar)
+                    .addComponent(botonEliminar)
                     .addComponent(botonCancelar))
                 .addGap(23, 23, 23))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonBorrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBorrarMouseClicked
+    private void botonEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEliminarMouseClicked
         // TODO add your handling code here:
        String claveArticulo= campoTextoClave.getText();
        AdministradorInventario admin= new AdministradorInventario();
        admin.eliminar(claveArticulo);
        
-       panelVerInventario.actualizarTablaDeArticulos();
-    }//GEN-LAST:event_botonBorrarMouseClicked
+       panelVerInventario.actualizarTablaArticulos();
+    }//GEN-LAST:event_botonEliminarMouseClicked
 
     private void botonCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCancelarMouseClicked
         // TODO add your handling code here:
@@ -108,8 +108,8 @@ class PanelEliminarArticulo extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonBorrar;
     private javax.swing.JButton botonCancelar;
+    private javax.swing.JButton botonEliminar;
     private javax.swing.JTextField campoTextoClave;
     private javax.swing.JLabel etiquetaClave;
     private javax.swing.JLabel etiquetaEliminar;

@@ -3,13 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Vista;
+package Ventanas;
 
 import Controlador.AdministradorInventario;
-import Modelo.Articulo;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import Datos.Articulo;
+
 
 
 /**
@@ -119,18 +117,21 @@ class PanelBuscarArticulo extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscarMouseClicked
+        
         campoTextoDescripcion.setVisible(true);
         etiquetaDescripcion.setVisible(true);
         campoTextoCantidad.setVisible(true);
         etiquetaCantidad.setVisible(true);
         campoTextoPrecio.setVisible(true);
         etiquetaPrecio.setVisible(true);
-        String claveDeArticulo= campoTextoClave.getText();
+        
+        String claveArticulo= campoTextoClave.getText();
         AdministradorInventario admin= new AdministradorInventario();
-        Articulo unArticulo= admin.buscar(claveDeArticulo);
-        campoTextoDescripcion.setText(unArticulo.getDescripcion());
-        campoTextoCantidad.setText(String.valueOf(unArticulo.getCantidad()));
-        campoTextoPrecio.setText(String.valueOf(unArticulo.getPrecio()));
+        Articulo articulo= admin.buscar(claveArticulo);
+        
+        campoTextoDescripcion.setText(articulo.getDescripcion());
+        campoTextoCantidad.setText(String.valueOf(articulo.getCantidad()));
+        campoTextoPrecio.setText(String.valueOf(articulo.getPrecio()));
         
     }//GEN-LAST:event_botonBuscarMouseClicked
 
