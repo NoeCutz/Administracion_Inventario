@@ -32,7 +32,7 @@ public class Articulo {
     }
     
     public String getClaveProveedor() {
-        return claveProveedor;
+       return claveProveedor;
     }
 
     public String getDescripcion() {

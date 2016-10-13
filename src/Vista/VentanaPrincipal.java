@@ -25,6 +25,7 @@ public class VentanaPrincipal extends JFrame {
     PanelVerInventario panelVerInventario;
     PanelBuscarArticulo panelBuscarArticulo; 
     PanelEliminarArticulo panelEliminarArticulo; 
+    PanelActualizarArticulo panelActualizarArticulo;
     
     
     public VentanaPrincipal(){
@@ -89,12 +90,12 @@ public class VentanaPrincipal extends JFrame {
      private void clickEnAgregarArticulo(ActionEvent evt) {
          panelAgregarArticulo = new PanelAgregarArticulo();
          
-         if(panelVerInventario!=null){
+         if(panelVerInventario != null){
              panelVerInventario.setVisible(false);
-             if(panelBuscarArticulo!=null){
+             if(panelBuscarArticulo != null){
                  panelBuscarArticulo.setVisible(false);
              }
-             if(panelEliminarArticulo!=null){
+             if(panelEliminarArticulo != null){
                  panelEliminarArticulo.setVisible(false);
              }
          }
@@ -105,8 +106,19 @@ public class VentanaPrincipal extends JFrame {
          initPanelAgregarArticulo();
      }
      
+     void clickEnActualizarArticulo(MouseEvent evt){
+         panelActualizarArticulo= new PanelActualizarArticulo(panelVerInventario);
+         if(panelBuscarArticulo != null){
+             panelBuscarArticulo.setVisible(false);
+         }
+         initPanelActualizarArticulo();
+     }
+     
      void clickEnBuscarArticulo(MouseEvent evt){
          panelBuscarArticulo= new PanelBuscarArticulo();
+         if(panelActualizarArticulo != null){
+             panelActualizarArticulo.setVisible(false);
+         }
          initPanelBuscarArticulo();
      }
      
@@ -188,6 +200,25 @@ public class VentanaPrincipal extends JFrame {
                 .addContainerGap(342, Short.MAX_VALUE)
                 .addComponent(panelEliminarArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
+        );
+     }
+     
+     private void initPanelActualizarArticulo(){
+         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(465, Short.MAX_VALUE)
+                .addComponent(panelActualizarArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(panelActualizarArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(103, Short.MAX_VALUE))
         );
      }
     

@@ -6,8 +6,9 @@
 package Vista;
 
 import Controlador.AdministradorInventario;
-import java.sql.ResultSet;
+import Modelo.Articulo;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -59,6 +60,7 @@ class PanelVerInventario extends javax.swing.JPanel {
         tablaDeArticulos = new javax.swing.JTable();
         botonBuscar = new javax.swing.JButton();
         botonEliminar = new javax.swing.JButton();
+        botonActualizarArticulo = new javax.swing.JButton();
 
         etiquetaArticulos.setText("Artículos:");
 
@@ -89,6 +91,13 @@ class PanelVerInventario extends javax.swing.JPanel {
             }
         });
 
+        botonActualizarArticulo.setText("Actualizar artículo");
+        botonActualizarArticulo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonActualizarArticuloMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -110,6 +119,10 @@ class PanelVerInventario extends javax.swing.JPanel {
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(126, 126, 126)
+                .addComponent(botonActualizarArticulo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,7 +135,9 @@ class PanelVerInventario extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botonEliminar)
                     .addComponent(botonBuscar))
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonActualizarArticulo)
+                .addContainerGap(93, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -136,17 +151,24 @@ class PanelVerInventario extends javax.swing.JPanel {
         ventanaPrincipal.clickEnEliminarArticulo(evt);
     }//GEN-LAST:event_botonEliminarMouseClicked
 
+    private void botonActualizarArticuloMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonActualizarArticuloMouseClicked
+        // TODO add your handling code here:
+        ventanaPrincipal.clickEnActualizarArticulo(evt);
+    }//GEN-LAST:event_botonActualizarArticuloMouseClicked
+
     private void generarTablaDeArticulos() throws SQLException, ClassNotFoundException{
         
         AdministradorInventario admin= new AdministradorInventario();
-        ResultSet resultadosConsultaSQL= admin.verInventario();
+        ArrayList<Articulo> articulos= admin.obtenerInventario();
         
-         while(resultadosConsultaSQL.next()){
-            contenidoTablaArticulos.addRow(new Object[]{resultadosConsultaSQL.getString("Clave"),
-                resultadosConsultaSQL.getString("Descripcion"),
-                resultadosConsultaSQL.getString("Cantidad"),
-                resultadosConsultaSQL.getString("Precio")});
-            } 
+         
+         for(int numArticulo=0; numArticulo<articulos.size(); numArticulo++){
+             contenidoTablaArticulos.addRow(new Object[]{articulos.get(numArticulo).getClave(),
+                    articulos.get(numArticulo).getDescripcion(),
+                    articulos.get(numArticulo).getCantidad(),
+                    articulos.get(numArticulo).getPrecio()
+             });
+         }
     }
     
     void actualizarTablaDeArticulos(){
@@ -154,15 +176,14 @@ class PanelVerInventario extends javax.swing.JPanel {
         try {
             contenidoTablaArticulos.setRowCount(0);
             generarTablaDeArticulos();
-        } catch (SQLException ex) {
-            Logger.getLogger(PanelVerInventario.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+        } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(PanelVerInventario.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonActualizarArticulo;
     private javax.swing.JButton botonBuscar;
     private javax.swing.JButton botonEliminar;
     private javax.swing.JLabel etiquetaArticulos;
