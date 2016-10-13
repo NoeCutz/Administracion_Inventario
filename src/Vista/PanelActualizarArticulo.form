@@ -17,46 +17,47 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="etiquetaIngresarClave" min="-2" max="-2" attributes="0"/>
-                              <Component id="campoTextoClave" min="-2" pref="136" max="-2" attributes="0"/>
-                          </Group>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="etiquetaIngresarClave" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoTextoClave" min="-2" pref="136" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="botonGuardarCambios" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
+                              <Component id="botonCancelar" min="-2" pref="106" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
+                                  <Component id="etiquetaClaveProveedor" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="campoTextoClaveProveedor" min="-2" pref="122" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="etiquetaClave" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
                                       <Component id="etiquetaDescripcion" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="etiquetaCantidad" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="etiquetaPrecio" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="campoTextoNuevaClave" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="campoTextoCantidad" max="32767" attributes="0"/>
-                                      <Group type="102" attributes="0">
+                                      <Component id="campoTextoPrecio" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
                                           <Component id="campoTextoDescripcion" min="-2" pref="123" max="-2" attributes="0"/>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
-                                      <Component id="campoTextoPrecio" max="32767" attributes="0"/>
                                   </Group>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="botonGuardarCambios" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="219" max="-2" attributes="0"/>
-                      <Component id="botonCancelar" min="-2" pref="106" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="75" max="32767" attributes="0"/>
@@ -70,32 +71,36 @@
               <Component id="etiquetaIngresarClave" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="campoTextoClave" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="etiquetaClave" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="campoTextoNuevaClave" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="etiquetaClaveProveedor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="campoTextoClaveProveedor" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="etiquetaDescripcion" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="campoTextoDescripcion" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="etiquetaCantidad" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="etiquetaPrecio" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="campoTextoDescripcion" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="etiquetaDescripcion" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="campoTextoCantidad" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="campoTextoPrecio" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="etiquetaCantidad" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="campoTextoCantidad" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="etiquetaPrecio" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="campoTextoPrecio" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="botonGuardarCambios" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="botonCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="59" max="32767" attributes="0"/>
+              <EmptySpace pref="61" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -107,11 +112,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="campoTextoClave">
-    </Component>
-    <Component class="javax.swing.JLabel" name="etiquetaClave">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Clave"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="etiquetaDescripcion">
       <Properties>
@@ -127,8 +127,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Precio"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="campoTextoNuevaClave">
     </Component>
     <Component class="javax.swing.JTextField" name="campoTextoDescripcion">
     </Component>
@@ -151,6 +149,13 @@
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonCancelarMouseClicked"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="etiquetaClaveProveedor">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Clave de proveedor"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="campoTextoClaveProveedor">
     </Component>
   </SubComponents>
 </Form>

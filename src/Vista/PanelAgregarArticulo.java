@@ -6,6 +6,7 @@
 package Vista;
 
 import Controlador.AdministradorInventario;
+import Modelo.Articulo;
 import java.awt.FlowLayout;
 
 /**
@@ -134,10 +135,15 @@ class PanelAgregarArticulo extends javax.swing.JPanel {
     private void botonAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarMouseClicked
         // TODO add your handling code here:
         AdministradorInventario admin= new AdministradorInventario();
-        admin.agregarArticulo(campoTextoClave.getText(), 
-                            campoTextoDescripcion.getText(), 
-                            Integer.parseInt(campoTextoCantidad.getText()), 
-                            Integer.parseInt(campoTextoPrecio.getText()));
+        String claveArticulo= campoTextoClave.getText();
+        String nuevaClaveProveedor = campoTextoClaveProveedor.getText();
+        String nuevaDescripcion= campoTextoDescripcion.getText();
+        String nuevaCantidad= campoTextoCantidad.getText();
+        String nuevoPrecio= campoTextoPrecio.getText();
+        Articulo unArticulo;
+        unArticulo = new Articulo(claveArticulo, nuevaClaveProveedor, nuevaDescripcion, Integer.parseInt(nuevaCantidad),  Float.parseFloat(nuevoPrecio));
+        
+        admin.agregar(unArticulo);
         
         campoTextoClave.setText(null);
         campoTextoClaveProveedor.setText(null);

@@ -99,12 +99,12 @@ public class ArticuloDAO {
     public void actualizarArticulo(Articulo articuloModificado) throws SQLException, ClassNotFoundException{
         ManejadorConexionBD.obtenerInstancia().conectarConBD();
         conexionBD = ManejadorConexionBD.obtenerConexion();
-        
-        String consultaSQL = "UPDATE articulos SET Descripcion" + " = \"" + articuloModificado.getDescripcion() + "\""
-                + "Cantidad" + " = \"" + articuloModificado.getCantidad() + "\""
-                + "Precio" + " = \"" + articuloModificado.getPrecio() + "\""
-                + " WHERE Clave = \"" + articuloModificado.getClave() + "\"";
         Statement sentenciaSQL = conexionBD.createStatement();
+        String consultaSQL = "UPDATE articulos SET ClaveProveedor = \"" + articuloModificado.getClaveProveedor() + "\", "
+                + "Descripcion" + " = \"" + articuloModificado.getDescripcion() + "\","
+                + "Cantidad" + " = " + articuloModificado.getCantidad()+ ", "
+                + "Precio" + " = " + articuloModificado.getPrecio() + " "
+                + " WHERE Clave = \"" + articuloModificado.getClave() + "\"";
         sentenciaSQL.executeUpdate(consultaSQL);
         
         ManejadorConexionBD.obtenerInstancia().desconectarConBD();

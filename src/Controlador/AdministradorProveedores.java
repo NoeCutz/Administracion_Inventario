@@ -47,14 +47,17 @@ public class AdministradorProveedores implements Administrador{
     }
 
     @Override
-    public void buscar(Object entidadABuscar) {
+    public Proveedor buscar(Object entidadABuscar) {
+        Proveedor proveedor = null;
+        
         try {
-            proveedorDAO.buscarProveedor((String)entidadABuscar);
+            proveedor = proveedorDAO.buscarProveedor((String)entidadABuscar);
         } catch (SQLException ex) {
             Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return proveedor;
     }
 
     @Override

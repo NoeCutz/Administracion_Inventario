@@ -12,7 +12,7 @@ package Controlador;
 public interface Administrador {
     public void agregar(Object entidadAAgregar);
     public void eliminar(Object entidadAEliminar);
-    public void buscar(Object entidadABuscar);
+    public Object buscar(Object entidadABuscar);
     public void actualizar(Object entidadAActualizar);
     public Object obtenerDatos();
 }

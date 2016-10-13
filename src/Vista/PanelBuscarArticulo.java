@@ -119,28 +119,18 @@ class PanelBuscarArticulo extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscarMouseClicked
-        try {       
-            // TODO add your handling code here:
-            
-            // TODO add your handling code here:
-            campoTextoDescripcion.setVisible(true);
-            etiquetaDescripcion.setVisible(true);
-            campoTextoCantidad.setVisible(true);
-            etiquetaCantidad.setVisible(true);
-            campoTextoPrecio.setVisible(true);
-            etiquetaPrecio.setVisible(true);
-            
-            String claveDeArticulo= campoTextoClave.getText();
-            AdministradorInventario admin= new AdministradorInventario();
-            Articulo articulo= admin.buscarArticulo(claveDeArticulo);
-            
-            campoTextoDescripcion.setText(articulo.getDescripcion());
-            campoTextoCantidad.setText(String.valueOf(articulo.getCantidad()));
-            campoTextoPrecio.setText(String.valueOf(articulo.getPrecio()));
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(PanelBuscarArticulo.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        campoTextoDescripcion.setVisible(true);
+        etiquetaDescripcion.setVisible(true);
+        campoTextoCantidad.setVisible(true);
+        etiquetaCantidad.setVisible(true);
+        campoTextoPrecio.setVisible(true);
+        etiquetaPrecio.setVisible(true);
+        String claveDeArticulo= campoTextoClave.getText();
+        AdministradorInventario admin= new AdministradorInventario();
+        Articulo unArticulo= admin.buscar(claveDeArticulo);
+        campoTextoDescripcion.setText(unArticulo.getDescripcion());
+        campoTextoCantidad.setText(String.valueOf(unArticulo.getCantidad()));
+        campoTextoPrecio.setText(String.valueOf(unArticulo.getPrecio()));
         
     }//GEN-LAST:event_botonBuscarMouseClicked
 

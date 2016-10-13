@@ -6,6 +6,7 @@
 package Vista;
 
 import Controlador.AdministradorInventario;
+import Modelo.Articulo;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -38,20 +39,18 @@ public class PanelActualizarArticulo extends javax.swing.JPanel {
 
         etiquetaIngresarClave = new javax.swing.JLabel();
         campoTextoClave = new javax.swing.JTextField();
-        etiquetaClave = new javax.swing.JLabel();
         etiquetaDescripcion = new javax.swing.JLabel();
         etiquetaCantidad = new javax.swing.JLabel();
         etiquetaPrecio = new javax.swing.JLabel();
-        campoTextoNuevaClave = new javax.swing.JTextField();
         campoTextoDescripcion = new javax.swing.JTextField();
         campoTextoCantidad = new javax.swing.JTextField();
         campoTextoPrecio = new javax.swing.JTextField();
         botonGuardarCambios = new javax.swing.JButton();
         botonCancelar = new javax.swing.JButton();
+        etiquetaClaveProveedor = new javax.swing.JLabel();
+        campoTextoClaveProveedor = new javax.swing.JTextField();
 
         etiquetaIngresarClave.setText("Ingrese la clave del producto a actualizar:");
-
-        etiquetaClave.setText("Clave");
 
         etiquetaDescripcion.setText("Descripcion");
 
@@ -73,41 +72,44 @@ public class PanelActualizarArticulo extends javax.swing.JPanel {
             }
         });
 
+        etiquetaClaveProveedor.setText("Clave de proveedor");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(36, 36, 36)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(etiquetaIngresarClave)
-                                .addComponent(campoTextoClave, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(65, 65, 65)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(etiquetaIngresarClave)
+                            .addComponent(campoTextoClave, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(botonGuardarCambios)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(154, 154, 154)
+                                .addComponent(botonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(layout.createSequentialGroup()
+                                    .addComponent(etiquetaClaveProveedor)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(campoTextoClaveProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, Short.MAX_VALUE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(etiquetaClave, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(etiquetaDescripcion)
                                         .addComponent(etiquetaCantidad)
                                         .addComponent(etiquetaPrecio))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(campoTextoNuevaClave)
+                                    .addGap(59, 59, 59)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(campoTextoCantidad)
+                                        .addComponent(campoTextoPrecio)
                                         .addGroup(layout.createSequentialGroup()
                                             .addComponent(campoTextoDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(0, 0, Short.MAX_VALUE))
-                                        .addComponent(campoTextoPrecio)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(botonGuardarCambios)
-                                    .addGap(0, 0, Short.MAX_VALUE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(219, 219, 219)
-                        .addComponent(botonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGap(0, 0, Short.MAX_VALUE))))))))
                 .addContainerGap(75, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -117,45 +119,44 @@ public class PanelActualizarArticulo extends javax.swing.JPanel {
                 .addComponent(etiquetaIngresarClave)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(campoTextoClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(etiquetaClave)
-                    .addComponent(campoTextoNuevaClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(etiquetaClaveProveedor)
+                    .addComponent(campoTextoClaveProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(etiquetaDescripcion)
-                    .addComponent(campoTextoDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(etiquetaCantidad)
-                    .addComponent(campoTextoCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(etiquetaPrecio)
-                    .addComponent(campoTextoPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(etiquetaCantidad)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(etiquetaPrecio))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(campoTextoDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(etiquetaDescripcion))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campoTextoCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campoTextoPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonGuardarCambios)
                     .addComponent(botonCancelar))
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonGuardarCambiosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonGuardarCambiosMouseClicked
         // TODO add your handling code here
         String claveArticulo= campoTextoClave.getText();
-        String nuevaClave= campoTextoNuevaClave.getText();
+        String nuevaClaveProveedor = campoTextoClaveProveedor.getText();
         String nuevaDescripcion= campoTextoDescripcion.getText();
         String nuevaCantidad= campoTextoCantidad.getText();
         String nuevoPrecio= campoTextoPrecio.getText();
-        
+        Articulo unArticulo;
+        unArticulo = new Articulo(claveArticulo, nuevaClaveProveedor, nuevaDescripcion, Integer.parseInt(nuevaCantidad),  Float.parseFloat(nuevoPrecio));
         AdministradorInventario admin= new AdministradorInventario();
-        try {
-            admin.actualizarArticulo(claveArticulo, nuevaClave, nuevaDescripcion, nuevaCantidad, nuevoPrecio);
-        } catch (SQLException ex) {
-            Logger.getLogger(PanelActualizarArticulo.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+        admin.actualizar(unArticulo);
         panelVerInventario.actualizarTablaDeArticulos();
         
     }//GEN-LAST:event_botonGuardarCambiosMouseClicked
@@ -171,11 +172,11 @@ public class PanelActualizarArticulo extends javax.swing.JPanel {
     private javax.swing.JButton botonGuardarCambios;
     private javax.swing.JTextField campoTextoCantidad;
     private javax.swing.JTextField campoTextoClave;
+    private javax.swing.JTextField campoTextoClaveProveedor;
     private javax.swing.JTextField campoTextoDescripcion;
-    private javax.swing.JTextField campoTextoNuevaClave;
     private javax.swing.JTextField campoTextoPrecio;
     private javax.swing.JLabel etiquetaCantidad;
-    private javax.swing.JLabel etiquetaClave;
+    private javax.swing.JLabel etiquetaClaveProveedor;
     private javax.swing.JLabel etiquetaDescripcion;
     private javax.swing.JLabel etiquetaIngresarClave;
     private javax.swing.JLabel etiquetaPrecio;

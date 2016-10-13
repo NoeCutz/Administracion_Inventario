@@ -96,7 +96,7 @@ class PanelEliminarArticulo extends javax.swing.JPanel {
         // TODO add your handling code here:
        String claveArticulo= campoTextoClave.getText();
        AdministradorInventario admin= new AdministradorInventario();
-       admin.eliminarArticulo(claveArticulo);
+       admin.eliminar(claveArticulo);
        
        panelVerInventario.actualizarTablaDeArticulos();
     }//GEN-LAST:event_botonBorrarMouseClicked

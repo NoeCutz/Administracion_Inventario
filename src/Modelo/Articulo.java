@@ -17,9 +17,10 @@ public class Articulo {
     private final String claveProveedor;
     private final String descripcion;
     private final int cantidad;
-    private final int precio;
+    private final float precio;
 
     public Articulo ( String clave, String claveProveedor, String descripcion, int cantidad, int precio ) {
+
         this.clave = clave;
         this.claveProveedor = claveProveedor;
         this.descripcion = descripcion;
@@ -43,7 +44,7 @@ public class Articulo {
         return cantidad;
     }
 
-    public int getPrecio() {
+    public float getPrecio() {
         return precio;
     }
     
