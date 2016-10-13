@@ -6,7 +6,7 @@
 package Ventanas;
 
 import Controlador.AdministradorInventario;
-import Datos.Articulo;
+import modelo.Articulo;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;

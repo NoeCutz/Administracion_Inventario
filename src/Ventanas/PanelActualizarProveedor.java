@@ -6,7 +6,7 @@
 package Ventanas;
 
 import Controlador.AdministradorProveedores;
-import Datos.Proveedor;
+import modelo.Proveedor;
 
 /**
  *

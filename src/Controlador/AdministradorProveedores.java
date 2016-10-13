@@ -5,8 +5,8 @@
  */
 package Controlador;
 
-import Datos.AccesoBDProveedores;
-import Datos.Proveedor;
+import modelo.datos.AccesoBDProveedores;
+import modelo.Proveedor;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
