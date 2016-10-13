@@ -6,7 +6,7 @@
 package controlador;
 
 import controlador.Administrador;
-import modelo.datos.AccesoBDArticulos;
+import modelo.datos.ArticulosDAO;
 import modelo.Articulo;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -22,10 +22,10 @@ import javax.swing.JOptionPane;
  */
 public class AdministradorInventario implements Administrador{
     
-    private final AccesoBDArticulos accesoBDArticulos;
+    private final ArticulosDAO accesoBDArticulos;
     
     public AdministradorInventario(){
-      accesoBDArticulos = new AccesoBDArticulos();
+      accesoBDArticulos = new ArticulosDAO();
     }
 
     @Override
