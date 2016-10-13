@@ -18,7 +18,7 @@ import modelo.Articulo;
  *
  * @author juan
  */
-public class AccesoBDArticulos {
+public class ArticuloDAO {
 
     private static Connection conexionBD;
     private String consultaBD;

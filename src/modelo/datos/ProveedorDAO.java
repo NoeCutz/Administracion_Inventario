@@ -18,7 +18,7 @@ import modelo.Proveedor;
  *
  * @author juan
  */
-public class ProveedoresDAO {
+public class ProveedorDAO {
 
     private static Connection conexionBD;
     private String consultaBD;
