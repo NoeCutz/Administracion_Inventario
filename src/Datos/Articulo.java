@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelo;
+package Datos;
 
 
 
@@ -18,6 +18,7 @@ public class Articulo {
     private final String descripcion;
     private final int cantidad;
     private final float precio;
+    
 
     public Articulo ( String clave, String claveProveedor, String descripcion, int cantidad, float precio ) {
         this.clave = clave;

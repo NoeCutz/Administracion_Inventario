@@ -5,12 +5,12 @@
  */
 package Controlador;
 
-import Datos.ProveedorDAO;
-import Modelo.Proveedor;
+import Datos.Proveedor;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,19 +18,19 @@ import java.util.logging.Logger;
  */
 public class AdministradorProveedores implements Administrador{
 
-   private ProveedorDAO proveedorDAO;
+   private final AccesoBDProveedores accesoBDProveedores;
     
     public AdministradorProveedores(){
-      proveedorDAO = new ProveedorDAO();
+      accesoBDProveedores = new AccesoBDProveedores();
     }
 
     @Override
     public void agregar(Object entidadAAgregar) {
         try {
-            proveedorDAO.insertarProveedor((Proveedor)entidadAAgregar);
-        } catch (SQLException ex) {
-            Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+            accesoBDProveedores.insertarProveedor((Proveedor)entidadAAgregar);
+            JOptionPane.showMessageDialog(null, "Proveedor agregado exitosamente");
+        } 
+        catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -38,10 +38,10 @@ public class AdministradorProveedores implements Administrador{
     @Override
     public void eliminar(Object entidadAEliminar) {
         try {
-            proveedorDAO.eliminarProveedor((String)entidadAEliminar);
-        } catch (SQLException ex) {
-            Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+            accesoBDProveedores.eliminarProveedor((String)entidadAEliminar);
+            JOptionPane.showMessageDialog(null, "Proveedor eliminado exitosamente");
+        } 
+        catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -51,36 +51,37 @@ public class AdministradorProveedores implements Administrador{
         Proveedor proveedor = null;
         
         try {
-            proveedor = proveedorDAO.buscarProveedor((String)entidadABuscar);
-        } catch (SQLException ex) {
-            Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+            proveedor = accesoBDProveedores.buscarProveedor((String)entidadABuscar);
+        } 
+        catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
         return proveedor;
     }
 
     @Override
     public void actualizar(Object entidadAActualizar) {
         try {
-            proveedorDAO.actualizarProveedor((Proveedor)entidadAActualizar);
-        } catch (SQLException ex) {
-            Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+            accesoBDProveedores.actualizarProveedor((Proveedor)entidadAActualizar);
+            JOptionPane.showMessageDialog(null, "Proveedor actualizado exitosamente");
+        } 
+        catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     @Override
-    public Object obtenerDatos() {
+    public ArrayList<Proveedor> obtenerDatos() {
         ArrayList<Proveedor> proveedores=null;
+                
         try {
-            proveedores = proveedorDAO.obtenerProveedores();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+            proveedores = accesoBDProveedores.obtenerProveedores();
+        }
+        catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(AdministradorInventario.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
         return proveedores;
     }
 

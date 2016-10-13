@@ -14,6 +14,7 @@ import java.sql.SQLException;
  * @author juan
  */
 public class ManejadorConexionBD {
+    
     private static String urlBD = "jdbc:mysql://localhost:3306/";
     private static String nombreControlador = "com.mysql.jdbc.Driver";
     private static String usuario = "root";
@@ -21,9 +22,6 @@ public class ManejadorConexionBD {
     private static ManejadorConexionBD instanciaManejadorConexion = null;
     private static Connection conexion;
     
-    private ManejadorConexionBD(){
-    
-    }
     
     private static void generarInstancia(){
         instanciaManejadorConexion = new ManejadorConexionBD();
@@ -33,6 +31,7 @@ public class ManejadorConexionBD {
         if(instanciaManejadorConexion == null){
              generarInstancia();
         }
+        
         return instanciaManejadorConexion;
     }
 
@@ -42,7 +41,7 @@ public class ManejadorConexionBD {
     }
 
     public void desconectarConBD() throws SQLException {
-     conexion.close();
+        conexion.close();
     }
 
     public static Connection obtenerConexion() {

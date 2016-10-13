@@ -19,17 +19,21 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="etiquetaClave" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="etiquetaDescripcion" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="etiquetaCantidad" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="etiquetaPrecio" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="etiquetaClaveProveedor" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                      <Component id="botonAgregar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                      <Component id="botonCancelar" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="etiquetaDescripcion" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="etiquetaCantidad" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="etiquetaPrecio" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="campoTextoDescripcion" max="32767" attributes="0"/>
                                   <Component id="campoTextoCantidad" max="32767" attributes="0"/>
@@ -37,39 +41,41 @@
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="campoTextoClaveProveedor" min="-2" pref="139" max="-2" attributes="0"/>
-                                  <Component id="campoTextoClave" min="-2" pref="135" max="-2" attributes="0"/>
+                                  <Component id="etiquetaAgregarArticulo" min="-2" max="-2" attributes="0"/>
+                                  <Component id="etiquetaClaveProveedor" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="campoTextoClaveProveedor" min="-2" pref="139" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="etiquetaClave" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                              <Component id="campoTextoClave" min="-2" pref="135" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
-                      <Component id="botonAgregar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                      <Component id="botonCancelar" min="-2" max="-2" attributes="0"/>
-                  </Group>
               </Group>
-              <EmptySpace pref="84" max="32767" attributes="0"/>
+              <EmptySpace pref="94" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="etiquetaClave" min="-2" max="-2" attributes="0"/>
-                  <Component id="campoTextoClave" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+              <Component id="etiquetaAgregarArticulo" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="etiquetaClave" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="campoTextoClave" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="etiquetaClaveProveedor" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="campoTextoClaveProveedor" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="etiquetaDescripcion" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="campoTextoDescripcion" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -84,12 +90,12 @@
                   <Component id="etiquetaPrecio" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="campoTextoPrecio" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+              <EmptySpace pref="22" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="botonAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="botonCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="59" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -145,6 +151,11 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="campoTextoClaveProveedor">
+    </Component>
+    <Component class="javax.swing.JLabel" name="etiquetaAgregarArticulo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Agregar art&#xed;culo"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
